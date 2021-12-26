@@ -14,7 +14,6 @@ In order to best proceed, the game will require pattern recognition and good rea
 In Bringing Home the Bacon, users will be able to:
 * Start, pause, and resume the game
 * Control the pig using keys <W/D>, <Up/Down>, or <Space/Down>
-* Toggle on/off music and/or game sounds
 * Progress through levels by reaching the end of each stage
 * Restart the game upon losing all lives or finishing the game
 
