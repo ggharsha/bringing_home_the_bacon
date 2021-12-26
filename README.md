@@ -56,7 +56,7 @@ This project will be implemented with the following technologies:
 
 
 ## Bonus Features:
-This project has abundant potential in terms of add-on features. Some potential ideas include:
+This project has abundant potential in terms of add-on features. Some ideas include:
 * Introducing new levels and obstacles that add even more difficulty levels to the game.
 * Introducing skin packs to change some of the characters in the game (pig, butcher, obstacle sprites). Potentially making themes based on holidays.
 * Introducing a challenge mode where the player only has a single life to get through as many levels as possible.
