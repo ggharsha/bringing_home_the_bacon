@@ -40,19 +40,21 @@ This project will be implemented with the following technologies:
 
 ## Implementation Timeline:
 * 12/31 Thursday
-
+    * Implement basic structure with classes for the game
+    * Get canvas to display on page along with pig and butcher elements
 
 * 1/3 Monday
-
+    * Flesh out classes and finalize all obstacles and characters
+    * Add game-state logic for lives
 
 * 1/4 Tuesday
-
+    * Finish implementing logic for collision detection, movement, and screen-scrolling
 
 * 1/5 Wednesday
-
+    * Add character sprites and animations
 
 * 1/6 Thursday
-
+    * Finish HTML and CSS to polish project including navbar
 
 ## Bonus Features:
 This project has abundant potential in terms of add-on features. Some ideas include:
