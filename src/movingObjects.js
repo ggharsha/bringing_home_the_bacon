@@ -1,0 +1,7 @@
+class MovingObject {
+
+    constructor() {
+        
+    }
+
+}
