@@ -1,0 +1,37 @@
+{
+  "name": "bringing_home_the_bacon",
+  "version": "1.0.0",
+  "description": "## Background: Bringing Home the Bacon is a sidescroller game borne of my love for the genre when growing up with series such as Mario and Sonic the Hedgehog. In this game, a player will take control of the pig as it tries to escape the angry butcher, all while avoiding obstacles along the way. The game consists of levels that should be progressively more and more challenging and will introduce more and more obstacles along the way.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggharsha/bringing_home_the_bacon.git"
+  },
+  "keywords": [],
+  "browserslist": [
+    "defaults"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggharsha/bringing_home_the_bacon/issues"
+  },
+  "homepage": "https://github.com/ggharsha/bringing_home_the_bacon#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.20.1",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
