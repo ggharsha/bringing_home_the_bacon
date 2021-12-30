@@ -3,6 +3,10 @@
     user-select: none;
 }
 
+html * {
+    font-family: 'Shizuru', cursive;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -13,4 +17,11 @@ body {
 .game-screen {
     overflow: hidden;
     position: relative;
+}
+
+.stage-level {
+    position: absolute;
+    top: 4vmin;
+    right: 4vmin;
+    font-size: 4vmin;
 }
