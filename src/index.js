@@ -4,19 +4,24 @@ window.GameView = GameView;
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+// create road
 ctx.fillStyle = '#838383';
 ctx.fillRect(0, 400, 1000, 140)
 
+// create lines on road
 ctx.fillStyle = 'yellow';
 for (let counter = 0; counter < 10; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
 
+// replace later - drawing pig
 const pig = document.getElementById('pig');
 ctx.drawImage(pig, 0, 250);
 
+// start game
 ctx.fillStyle = 'black';
 ctx.font = '50px Shizuru';
 ctx.fillText('Press any key to start!', 185, 250);
 
+// stage - level
 ctx.fillStyle = 'black';
 ctx.font = '40px Shizuru';
 ctx.fillText('1-1', 945, 40) // replace 1-1 with this.stage this.level
@@ -38,5 +43,3 @@ ctx.fillText('1-1', 945, 40) // replace 1-1 with this.stage this.level
 //     // on top in the corner:
 //     ctx.drawImage(this, 0, 0, this.width, this.height);
 // }
-π
-

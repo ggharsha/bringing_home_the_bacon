@@ -7,8 +7,11 @@ class MovingObject {
         this.size = object["size"];
     }
 
+    draw() {
+    }
+
     // traffic cones and road stripes will move at same rate
     // pans and knives will move faster
-    
+
 
 }
