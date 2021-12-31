@@ -1,5 +1,9 @@
+const GameView = require("./scripts/gameView")
+window.GameView = GameView;
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
 ctx.fillStyle = '#838383';
 ctx.fillRect(0, 400, 1000, 140)
 ctx.fillStyle = 'yellow';
@@ -23,5 +27,5 @@ ctx.drawImage(pig, 0, 250)
 //     // on top in the corner:
 //     ctx.drawImage(this, 0, 0, this.width, this.height);
 // }
-
+π
 
