@@ -17,12 +17,14 @@ class Game {
         else pos[0] = pos[0] % DIM_X;
     }
 
+    // runs 1 tick of gameplay
     step() {
 
+        // this.checkCollisions;
     }
 
+    // checks for collisions on each tick
     checkCollisions() {
-
     }
 
 }

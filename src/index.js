@@ -6,10 +6,21 @@ const ctx = canvas.getContext('2d');
 
 ctx.fillStyle = '#838383';
 ctx.fillRect(0, 400, 1000, 140)
+
 ctx.fillStyle = 'yellow';
 for (let counter = 0; counter < 10; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
+
 const pig = document.getElementById('pig');
-ctx.drawImage(pig, 0, 250)
+ctx.drawImage(pig, 0, 250);
+
+ctx.fillStyle = 'black';
+ctx.font = '50px Shizuru';
+ctx.fillText('Press any key to start!', 185, 250);
+
+ctx.fillStyle = 'black';
+ctx.font = '40px Shizuru';
+ctx.fillText('1-1', 945, 40) // replace 1-1 with this.stage this.level
+
 // const image = new Image(60, 45); // Using optional size for image
 // image.onload = drawImageActualSize; // Draw when image has loaded
 // image.src = 'src/images/pig1.png';

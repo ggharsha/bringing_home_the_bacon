@@ -67,7 +67,7 @@ HTML * {
 
 h1 {
     font-size: 60px;
-    margin: 10px;
+    margin: 30px;
 }
 
 body {
@@ -81,7 +81,7 @@ body {
 }
 
 #nav-bar {
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: #a9a9a9;
     padding: 10px;
 }
@@ -90,10 +90,13 @@ body {
     display: inline;
     font-size: 32px;
     text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 #nav-bar li a {
     text-decoration: none;
+    color: black;
 }
 
 #nav-bar li:hover {
