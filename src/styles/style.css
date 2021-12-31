@@ -7,6 +7,11 @@ HTML * {
     font-family: 'Shizuru', cursive;
 }
 
+h1 {
+    font-size: 60px;
+    margin: 10px;
+}
+
 body {
     background-color: lightgray;
     display: flex;
@@ -19,7 +24,22 @@ body {
 
 #nav-bar {
     justify-content: space-evenly;
-    margin: 10px;
+    background-color: #a9a9a9;
+    padding: 10px;
+}
+
+#nav-bar li {
+    display: inline;
+    font-size: 32px;
+    text-align: center;
+}
+
+#nav-bar li a {
+    text-decoration: none;
+}
+
+#nav-bar li:hover {
+    background-color: #838383;
 }
 
 #canvas {
