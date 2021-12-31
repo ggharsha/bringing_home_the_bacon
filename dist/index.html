@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./main.css" />
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
     <title>Bringing Home the Bacon</title>
 </head>
 <body>
+    <div id="nav-bar">
+        <ul>
+            <li class="github"><a href="https://github.com/ggharsha/bringing_home_the_bacon">GitHub</a></li>
+            <li class="linkedin">LinkedIn</li>
+            <li class="twitter"><a href="http://twitter.com/ggharsha">Twitter</a>></li>
+        </ul>
+    </div>
 
     <div class="game-screen">
-        <div class="stage-level">1-1</div>
         <div class="start-prompt">Click to start!</div>
-        <img src="/src/images/pig1.png" class="pig"></img>
-        <!--
-            <img src="" class="ground"></img>
-            <img src="" class="ground"></img>
-            <img src="" class="butcher"></img>
-        -->
+        <div class="stage-level">1-1</div>
+        <canvas id="canvas" width="1000" height="600">
+            <img src="/src/images/pig1.png" id="pig"></img>
+        </canvas>
     </div>
     
 </body>

@@ -3,25 +3,34 @@
     user-select: none;
 }
 
-html * {
+HTML * {
     font-family: 'Shizuru', cursive;
 }
 
 body {
-    margin: 0;
+    background-color: lightgray;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.game-screen {
-    overflow: hidden;
-    position: relative;
+#nav-bar {
+    justify-content: space-evenly;
+    margin: 10px;
 }
 
-.stage-level {
-    position: absolute;
-    top: 4vmin;
-    right: 4vmin;
-    font-size: 4vmin;
+#canvas {
+    background-color: #a9a9a9;
+    border-radius: 20px;
 }
+
+/* .nav-bar {
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+
+} */
