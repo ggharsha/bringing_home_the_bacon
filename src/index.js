@@ -1,18 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#838383';
-ctx.fillRect(0, 400, 1000, 140);
+ctx.fillRect(0, 400, 1000, 140)
 ctx.fillStyle = 'yellow';
-ctx.fillRect(0, 460, 50, 10);
-ctx.fillRect(100, 460, 50, 10);
-ctx.fillRect(200, 460, 50, 10);
-ctx.fillRect(300, 460, 50, 10);
-ctx.fillRect(400, 460, 50, 10);
-ctx.fillRect(500, 460, 50, 10);
-ctx.fillRect(600, 460, 50, 10);
-ctx.fillRect(700, 460, 50, 10);
-ctx.fillRect(800, 460, 50, 10);
-ctx.fillRect(900, 460, 50, 10);
+for (let counter = 0; counter < 10; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
 const pig = document.getElementById('pig');
 ctx.drawImage(pig, 0, 250)
 // const image = new Image(60, 45); // Using optional size for image
