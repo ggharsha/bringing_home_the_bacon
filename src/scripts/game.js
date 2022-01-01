@@ -10,6 +10,7 @@ function Game(ctx) {
     this.stage = 1;
     this.level = 1;
     this.lives = 3;
+    this.gameOver = false;
 }
 
 // revision - wont use this // this method is only for the road stripes and buildings
@@ -27,6 +28,7 @@ Game.prototype.draw = function() {
 
 // runs 1 tick of gameplay
 Game.prototype.step = function() {
+    // clearRect
     this.game.draw
     this.checkCollisions;
 }

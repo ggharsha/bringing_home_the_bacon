@@ -12,7 +12,7 @@ Util.inherits(TrafficCone, MovingObject);
 
 TrafficCone.prototype.draw = function(ctx) {
     const trafficcone = new Image();
-    trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, 1000, 250));
+    trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, this.pos[0], this.pos[1]));
     trafficcone.src = "src/images/trafficcone.png";
 }
 
