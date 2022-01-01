@@ -16,6 +16,14 @@ for (let counter = 0; counter < 10; counter++) ctx.fillRect((100 * counter), 460
 const pig = document.getElementById('pig');
 ctx.drawImage(pig, 0, 250);
 
+// replace later - drawing knife
+const knife = document.getElementById('knife');
+ctx.drawImage(knife, 400, 170);
+
+// replace later - drawing traffic cone
+const trafficcone = document.getElementById('trafficcone');
+ctx.drawImage(trafficcone, 800, 250);
+
 // start game
 ctx.fillStyle = 'black';
 ctx.font = '50px Shizuru';

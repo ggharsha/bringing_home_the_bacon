@@ -1,4 +1,7 @@
-const Pig = require("./pig")
+const Pig = require("./pig");
+const TrafficCone = require("./trafficCone");
+const Knife = require("./knife");
+const Background = require("./background");
 
 function Game(ctx) {
     DIM_X = 1000;
@@ -10,11 +13,11 @@ function Game(ctx) {
     this.pig = new Pig({game: this});
 }
 
-// this method is only for the road stripes and buildings
-Game.prototype.wrap = function(pos) {
-    if (pos[0] < 0) pos[0] = DIM_X + pos[0];
-    else pos[0] = pos[0] % DIM_X;
-}
+// revision - wont use this // this method is only for the road stripes and buildings
+// Game.prototype.wrap = function(pos) {
+//     if (pos[0] < 0) pos[0] = DIM_X + pos[0];
+//     else pos[0] = pos[0] % DIM_X;
+// }
 
 Game.prototype.draw = function() {
 }
