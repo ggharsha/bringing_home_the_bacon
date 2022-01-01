@@ -12,7 +12,7 @@ Util.inherits(Knife, MovingObject);
 
 Knife.prototype.draw = function(ctx) {
     const knife = new Image();
-    knife.addEventListener('load', () => ctx.drawImage(knife, 400, 170));
+    knife.addEventListener('load', () => ctx.drawImage(knife, 1000, 170));
     knife.src = "src/images/knife.png";
 }
 

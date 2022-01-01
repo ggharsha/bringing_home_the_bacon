@@ -10,7 +10,6 @@ function Game(ctx) {
     this.stage = 1;
     this.level = 1;
     this.lives = 3;
-    this.pig = new Pig({game: this});
 }
 
 // revision - wont use this // this method is only for the road stripes and buildings
@@ -18,6 +17,10 @@ function Game(ctx) {
 //     if (pos[0] < 0) pos[0] = DIM_X + pos[0];
 //     else pos[0] = pos[0] % DIM_X;
 // }
+
+Game.prototype.start = function() {
+    const pig = new Pig({game: this, size: [256, 256] /* not sure for this */})
+}
 
 Game.prototype.draw = function() {
 }

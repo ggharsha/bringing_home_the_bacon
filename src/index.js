@@ -17,11 +17,11 @@ pig.addEventListener('load', () => ctx.drawImage(pig, 0, 250, 256, 256));
 pig.src = "src/images/pig1.png"
 
 const knife = new Image();
-knife.addEventListener('load', () => ctx.drawImage(knife, 400, 170));
+knife.addEventListener('load', () => ctx.drawImage(knife, 800, 170));
 knife.src = "src/images/knife.png";
 
 const trafficcone = new Image();
-trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, 800, 250));
+trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, 300, 250));
 trafficcone.src = "src/images/trafficcone.png";
 
 // start game
