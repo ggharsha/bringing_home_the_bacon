@@ -5,7 +5,7 @@ function Pig(object) {
     this.pos = [0, 250];
     this.vel = [0, 0];
     this.game = object["game"];
-    this.size = object["size"];
+    this.size = object["size"]; // fix this with real size
     this.sprite = "src/images/pig1.png";
 }
 

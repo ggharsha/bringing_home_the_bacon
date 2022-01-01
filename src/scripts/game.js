@@ -2,6 +2,11 @@ const Pig = require("./pig");
 const TrafficCone = require("./trafficCone");
 const Knife = require("./knife");
 const Background = require("./background");
+const Level1 = require("./1-1");
+const Level2 = require("./1-2");
+const Level3 = require("./1-3");
+const Level4 = require("./1-4");
+const Level5 = require("./1-5");
 
 function Game(ctx) {
     DIM_X = 1000;
@@ -10,7 +15,7 @@ function Game(ctx) {
     this.stage = 1;
     this.level = 1;
     this.lives = 3;
-    this.gameOver = false;
+    this.lose = false;
 }
 
 // revision - wont use this // this method is only for the road stripes and buildings
@@ -20,7 +25,7 @@ function Game(ctx) {
 // }
 
 Game.prototype.start = function() {
-    const pig = new Pig({game: this, size: [256, 256] /* not sure for this */})
+    // load level
 }
 
 Game.prototype.draw = function() {
@@ -35,6 +40,11 @@ Game.prototype.step = function() {
 
 // checks for collisions on each tick
 Game.prototype.checkCollisions = function() {
+}
+
+Game.prototype.gameOver = function() {
+    if (this.lives === 0) this.lose = true;
+    else this.lose = false;
 }
 
 module.exports = Game;

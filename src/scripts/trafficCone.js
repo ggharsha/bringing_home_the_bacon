@@ -5,7 +5,7 @@ function TrafficCone(object) {
     this.pos = [1000, 250];
     this.vel = [-25, 0];
     this.game = object["game"];
-    this.size = object["size"];
+    this.size = object["size"]; // refactor this
 }
 
 Util.inherits(TrafficCone, MovingObject);

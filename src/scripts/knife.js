@@ -5,7 +5,7 @@ function Knife(object) {
     this.pos = [1000, 170];
     this.vel = [-50, 0];
     this.game = object["game"];
-    this.size = object["size"];
+    this.size = object["size"]; // refactor this
 }
 
 Util.inherits(Knife, MovingObject);

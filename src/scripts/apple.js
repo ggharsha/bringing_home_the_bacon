@@ -5,7 +5,7 @@ function Apple(object) {
     this.pos = [1000, 170];
     this.vel = [-25, 0];
     this.game = object["game"];
-    this.size = object["size"];
+    this.size = object["size"]; // refactor this
 }
 
 Util.inherits(Apple, MovingObject);

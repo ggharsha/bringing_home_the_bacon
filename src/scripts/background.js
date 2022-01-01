@@ -1,5 +1,6 @@
-function Background(ctx) {
-    this.ctx = ctx;
+const MovingObject = require("./movingObject");
+
+function Background(object) {
 }
 
 Background.prototype.draw = function() {
