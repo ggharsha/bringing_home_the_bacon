@@ -12,10 +12,9 @@ ctx.fillRect(0, 400, 1000, 140)
 ctx.fillStyle = 'yellow';
 for (let counter = 0; counter < 10; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
 
-const pig = new Image(); // Using optional size for image
+const pig = new Image(); 
 pig.addEventListener('load', () => ctx.drawImage(pig, 0, 250, 256, 256)); 
 pig.src = "src/images/pig1.png"
-
 
 const knife = new Image();
 knife.addEventListener('load', () => ctx.drawImage(knife, 400, 170));
