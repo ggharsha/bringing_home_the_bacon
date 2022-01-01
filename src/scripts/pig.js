@@ -1,12 +1,16 @@
 const MovingObject = require("./movingObject");
 const Util = require("./util");
 
-class Pig {
+function Pig(object) {
+    this.pos = object["pos"];
+    this.vel = object["vel"];
+    this.game = object["game"];
+    this.size = object["size"];
+}
 
-    constructor(obj) {
+Util.inherits(Pig, MovingObject);
 
-    }
-
+Pig.prototype.draw = function(ctx) {
 }
 
 module.exports = Pig;

@@ -1,17 +1,13 @@
 const Game = require("./game")
 
-class GameView {
+function GameView(ctx) {
+    this.game = new Game(ctx);
+    this.ctx = ctx;
+}
 
-    constructor(ctx) {
-        this.game = new Game(ctx);
-        this.ctx = ctx;
-    }
-
-    // start() {
-    //     setInterval(() => {this.game.draw(this.ctx)}, 25)
-    //     setInterval(() => {this.game.step()}, 25)
-    // }
-
+GameView.prototype.start = function() {
+//     setInterval(() => {this.game.draw(this.ctx)}, 25)
+//     setInterval(() => {this.game.step()}, 25)
 }
 
 module.exports = GameView;
