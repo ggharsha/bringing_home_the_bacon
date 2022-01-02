@@ -15,13 +15,26 @@ export default class Game {
         this.objects = [this.pig];
     }
 
+    // lets replace draw and step with an animate method
+    animate(ctx) {
+        ctx.clearRect(0, 0, 1000, 600);
+        this.draw(ctx);
+        requestAnimationFrame(animate);
+    }
+
+    // refactoring this
     draw(ctx) {
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => obj.draw(ctx)); 
     }
 
+    // refactoring this
     moveObjects() {
-        this.pig.switchSprite();
+        const pig = this.pig
+        pig.switchSprite();
+        window.addEventListener("keydown", function(e) {
+            if (e.code === "Space") pig.jump()
+        });
         this.objects.forEach(obj => obj.move());
     }
 
