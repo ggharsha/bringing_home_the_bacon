@@ -18,9 +18,6 @@ export default class Game {
         this.ctx = ctx;
     }
 
-    // lets replace draw and step with an animate method
-    
-
     startAnimating(fps) {
         fpsInterval = 1000 / fps;
         then = Date.now();
@@ -35,7 +32,7 @@ export default class Game {
         if (elapsed > fpsInterval) {
             then = now - (elapsed % fpsInterval);
             this.draw(this.ctx)
-            this.moveObjects()
+            this.moveObjects() // replace with step
         };
     }
 
