@@ -51,5 +51,4 @@ import Game from "./scripts/game";
 window.Game = Game;
 const newGame = new Game(ctx);
 newGame.levelOne();
-setInterval(() => {newGame.draw(ctx)}, 100);
-setInterval(() => {newGame.moveObjects()}, 100);
+newGame.startAnimating(10);

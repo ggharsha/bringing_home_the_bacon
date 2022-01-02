@@ -5,6 +5,8 @@ import Pan from "./pan";
 import Background from "./background";
 import Apple from "./apple";
 
+let fpsInterval, then, startTime, now, elapsed;
+
 export default class Game {
     constructor(ctx) {
         this.DIM_X = 1000;
@@ -13,24 +15,38 @@ export default class Game {
         this.level = 1;
         this.pig = new Pig({ game: this });
         this.objects = [this.pig];
+        this.ctx = ctx;
     }
 
     // lets replace draw and step with an animate method
-    animate(ctx) {
-        ctx.clearRect(0, 0, 1000, 600);
-        this.draw(ctx);
-        requestAnimationFrame(animate);
+    
+
+    startAnimating(fps) {
+        fpsInterval = 1000 / fps;
+        then = Date.now();
+        startTime = then;
+        this.animate();
     }
 
-    // refactoring this
+    animate(){
+        requestAnimationFrame(this.animate.bind(this))
+        now = Date.now();
+        elapsed = now - then;
+        if (elapsed > fpsInterval) {
+            then = now - (elapsed % fpsInterval);
+            this.draw(this.ctx)
+            this.moveObjects()
+        };
+    }
+
     draw(ctx) {
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => {
             obj.draw(ctx);
+            
         }); 
     }
 
-    // refactoring this
     moveObjects() {
         const pig = this.pig
         pig.switchSprite();
@@ -43,7 +59,9 @@ export default class Game {
         window.addEventListener("keyup", function(e) {
             if (e.code === "ArrowDown") pig.stand();
         });
-        this.objects.forEach(obj => obj.move());
+        this.objects.forEach(obj => { 
+            obj.move();
+        });
         if (this.pig.pos[1] < 80) this.pig.vel = [0, 40];
         if (this.pig.pos[1] === 250) this.pig.vel = [0, 0];
     }
@@ -63,7 +81,7 @@ export default class Game {
         let tc2 = new TrafficCone({ game: this, pos: [2400, 250] });
         let knife = new Knife({ game: this, pos: [3000, 180] });
         let knife2 = new Knife({ game: this, pos: [4000, 180] });
-        let pan = new Pan({ game: this, pos: [3500, 180] });
+        let pan = new Pan({ game: this, pos: [3500, 150], vel: [-200, -40] });
         let apple = new Apple({ game: this, pos: [3500, 300] });
         this.objects.push(bg, bg2, tc, tc2, knife, knife2, pan, apple); // add bg, bg2, 
     }

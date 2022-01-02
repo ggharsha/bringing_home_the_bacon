@@ -7,6 +7,7 @@ export default class Background extends MovingObject {
         this.vel = [-50, 0];
     }
 
+    // we will refactor this
     draw(ctx) {
         // create road
         ctx.fillStyle = '#838383';

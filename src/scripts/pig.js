@@ -7,6 +7,7 @@ export default class Pig extends MovingObject {
         this.vel = [0, 0];
         this.size = [164, 124];
         this.sprite = "src/images/pig1.png";
+        this.counter = 3;
     }
 
     draw(ctx) {
@@ -16,8 +17,11 @@ export default class Pig extends MovingObject {
     }
     
     switchSprite() {
-        if (this.sprite === "src/images/pig1.png") this.sprite = "src/images/pig2.png";
-        else this.sprite = "src/images/pig1.png";
+        if (this.counter === 0) {
+            if (this.sprite === "src/images/pig1.png") this.sprite = "src/images/pig2.png";
+            else this.sprite = "src/images/pig1.png";
+            this.counter = 3;
+        } else this.counter--;
     }
     
     // need to finish
@@ -34,6 +38,7 @@ export default class Pig extends MovingObject {
     }
 
     duck() {
+        console.log("hello")
         if (this.pos[1] === 250) {
             this.sprite = "./src/images/duckingpig.png";
             this.size = [/* new size */];
