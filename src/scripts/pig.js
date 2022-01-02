@@ -15,9 +15,7 @@ export default class Pig extends MovingObject {
         pig.src = this.sprite;
     }
     
-    // add dead sprite 
     switchSprite() {
-        if (this.isDucking()) this.sprite = "src/images/duckingpig.png";
         if (this.sprite === "src/images/pig1.png") this.sprite = "src/images/pig2.png";
         else this.sprite = "src/images/pig1.png";
     }
@@ -31,23 +29,23 @@ export default class Pig extends MovingObject {
         //check collision, return t or f
     }
 
-    // call all methods here
-    update() {
-    }
-
-    // working on this
     jump() {
+        if (this.pos[1] === 250) this.vel = [0, -40];
+    }
+
+    duck() {
         if (this.pos[1] === 250) {
-            console.log("hi")
-            this.vel = [0, -20];
-        } 
+            this.sprite = "./src/images/duckingpig.png";
+            this.size = [/* new size */];
+        };
     }
 
-    // isJumping() {
-    //     if (this.pos[1] !== 250) return true;
-    //     return false;
-    // }
-
-    isDucking(res) {
+    stand() {
+        if (this.pos[1] === 250) {
+            this.sprite = "./src/images/pig1.png";
+            this.size = [/* new size */];
+        };
     }
+
+    // add a dead function
 }

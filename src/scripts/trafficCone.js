@@ -3,7 +3,7 @@ import MovingObject from "./movingObject";
 export default class TrafficCone extends MovingObject {
     constructor(object) {
         super(object);
-        this.vel = [-25, 0];
+        this.vel = [-50, 0];
     }
 
     draw(ctx) {

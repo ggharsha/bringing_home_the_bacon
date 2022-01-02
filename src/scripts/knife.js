@@ -3,7 +3,7 @@ import MovingObject from "./movingObject";
 export default class Knife extends MovingObject {
     constructor(object) {
         super(object);
-        this.vel = [-50, 0];
+        this.vel = [-100, 0];
     }
 
     draw(ctx) {
