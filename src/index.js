@@ -46,3 +46,10 @@ ctx.fillText('Press any key to start!', 185, 250);
 ctx.fillStyle = 'black';
 ctx.font = '40px Shizuru';
 ctx.fillText('Lv.1', 930, 40) // replace 1-1 with this.stage this.level
+
+// import Game from "./scripts/game";
+// window.Game = Game;
+// const newGame = new Game(ctx);
+// newGame.levelOne();
+// setInterval(() => {newGame.draw(ctx)}, 75);
+// setInterval(() => {newGame.moveObjects()}, 75);

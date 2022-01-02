@@ -7,8 +7,8 @@ export default class GameView {
     }
 
     start() {
-        // setInterval(() => {this.game.draw(this.ctx)}, 25)
-        // setInterval(() => {this.game.step()}, 25)
+        // setInterval(() => {this.game.draw(this.ctx)}, 75)
+        // setInterval(() => {this.game.step()}, 75)
     }
 
     bindKeyHandlers() {

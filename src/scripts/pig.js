@@ -7,13 +7,12 @@ export default class Pig extends MovingObject {
         this.vel = [0, 0];
         this.size = [164, 124];
         this.sprite = "src/images/pig1.png";
-        console.log(this.vel);
     }
 
     draw(ctx) {
         const pig = new Image();
         pig.addEventListener('load', () => ctx.drawImage(pig, this.pos[0], this.pos[1]));
-        pig.src = "src/images/pig1.png"
+        pig.src = this.sprite;
     }
 
     switchSprite() {
