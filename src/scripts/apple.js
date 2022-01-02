@@ -1,7 +1,6 @@
 import MovingObject from "./movingObject";
 
 export default class Apple extends MovingObject {
-
     constructor(object) {
         super(object);
         this.vel = [-25, 0];

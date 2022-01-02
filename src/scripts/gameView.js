@@ -1,14 +1,17 @@
-const Game = require("./game")
+import Game from "./game";
 
-function GameView(ctx) {
-    this.game = new Game(ctx);
-    this.ctx = ctx;
+export default class GameView {
+    constructor(ctx) {
+        this.game = x // new Game(ctx);
+        this.ctx = ctx;
+    }
+
+    start() {
+        // setInterval(() => {this.game.draw(this.ctx)}, 25)
+        // setInterval(() => {this.game.step()}, 25)
+    }
+
+    bindKeyHandlers() {
+        // keyhandlers
+    }
 }
-
-GameView.prototype.start = function() {
-    // this.game.start()
-    // setInterval(() => {this.game.draw(this.ctx)}, 25)
-    // setInterval(() => {this.game.step()}, 25)
-}
-
-module.exports = GameView;

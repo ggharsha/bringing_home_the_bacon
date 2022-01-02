@@ -23,4 +23,8 @@ export default class Background extends MovingObject {
         // state 4
         // for (let counter = 0; counter < 11; counter++) ctx.fillRect((100 * counter - 75), 460, 50, 10);
     }
+
+    wrap() {
+        if (this.pos[0] === -1000) this.pos[0] = 1000;
+    }
 }

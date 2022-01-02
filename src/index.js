@@ -4,7 +4,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-
 // create road
 ctx.fillStyle = '#838383';
 ctx.fillRect(0, 400, 1000, 140)

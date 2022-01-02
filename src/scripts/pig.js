@@ -1,10 +1,9 @@
 import MovingObject from "./movingObject";
 
 export default class Pig extends MovingObject {
-
     constructor(object) {
         super(object);
-        this.pos = []
+        this.pos = [0, 250]
         this.vel = [0, 0]
         this.sprite = "src/images/pig1.png";
         console.log(this.vel);
