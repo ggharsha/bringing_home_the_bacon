@@ -45,4 +45,4 @@ ctx.fillText('Press any key to start!', 185, 250);
 // stage - level
 ctx.fillStyle = 'black';
 ctx.font = '40px Shizuru';
-ctx.fillText('1-1', 945, 40) // replace 1-1 with this.stage this.level
+ctx.fillText('Lv.1', 930, 40) // replace 1-1 with this.stage this.level
