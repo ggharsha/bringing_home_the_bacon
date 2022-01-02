@@ -6,9 +6,9 @@ function GameView(ctx) {
 }
 
 GameView.prototype.start = function() {
-    this.game.start()
-    setInterval(() => {this.game.draw(this.ctx)}, 25)
-    setInterval(() => {this.game.step()}, 25)
+    // this.game.start()
+    // setInterval(() => {this.game.draw(this.ctx)}, 25)
+    // setInterval(() => {this.game.step()}, 25)
 }
 
 module.exports = GameView;
