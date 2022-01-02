@@ -1,19 +1,16 @@
-const Pig = require("./pig");
-const TrafficCone = require("./trafficCone");
-const Knife = require("./knife");
 const Background = require("./background");
-const Level1 = require("./1-1");
-const Level2 = require("./1-2");
-const Level3 = require("./1-3");
-const Level4 = require("./1-4");
-const Level5 = require("./1-5");
+const Level1 = require("./levelOne");
+const Level2 = require("./levelTwo");
+const Level3 = require("./levelThree");
+const Level4 = require("./levelFour");
+const Level5 = require("./levelFive");
 
 function Game(ctx) {
     DIM_X = 1000;
     DIM_Y = 600;
     this.ctx = ctx;
-    this.stage = 1;
-    this.level = 1;
+    // this.stage = 1;
+    this.level = null;
     this.lives = 3;
     this.lose = false;
 }
@@ -25,17 +22,22 @@ function Game(ctx) {
 // }
 
 Game.prototype.start = function() {
-    // load level
+    this.level = new Level1(this);
 }
 
-Game.prototype.draw = function() {
+Game.prototype.draw = function(ctx) {
+    this.level.draw(ctx);
+}
+
+Game.prototype.move = function() {
+    this.level.move();
 }
 
 // runs 1 tick of gameplay
 Game.prototype.step = function() {
-    // clearRect
-    this.game.draw
-    this.checkCollisions;
+    this.game.draw(this.ctx);
+    this.game.move();
+    // this.checkCollisions;
 }
 
 // checks for collisions on each tick

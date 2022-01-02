@@ -1,34 +1,31 @@
-const MovingObject = require("./movingObject");
-const Util = require("./util");
+import MovingObject from "./movingObject";
 
-function Pig(object) {
-    this.pos = [0, 250];
-    this.vel = [0, 0];
-    this.game = object["game"];
-    this.size = object["size"]; // fix this with real size
-    this.sprite = "src/images/pig1.png";
+export default class Pig extends MovingObject {
+
+    constructor(object) {
+        super(object);
+        this.pos = []
+        this.vel = [0, 0]
+        this.sprite = "src/images/pig1.png";
+        console.log(this.vel);
+    }
+
+    draw(ctx) {
+        const pig = new Image();
+        pig.addEventListener('load', () => ctx.drawImage(pig, this.pos[0], this.pos[1]));
+        pig.src = "src/images/pig1.png"
+    }
+
+    switchSprite() {
+        if (this.sprite === "src/images/pig1.png") this.sprite = "src/images/pig2.png";
+        else this.sprite = "src/images/pig1.png";
+    }
+
+    isJumping() {
+        if (this.pos[1] !== 250) return true;
+        return false;
+    }
+
+    isDucking() {
+    }
 }
-
-Util.inherits(Pig, MovingObject);
-
-Pig.prototype.draw = function(ctx) {
-    const pig = new Image();
-    pig.addEventListener('load', () => ctx.drawImage(pig, this.pos[0], this.pos[1]));
-    pig.src = "src/images/pig1.png"
-}
-
-Pig.prototype.switchSprite = function() {
-    if (this.sprite === "src/images/pig1.png") this.sprite = "src/images/pig2.png";
-    else this.sprite = "src/images/pig1.png";
-}
-
-Pig.prototype.isJumping = function() {
-    if (this.pos[1] !== 250) return true;
-    return false;
-}
-
-Pig.prototype.isDucking = function() {
-
-}
-
-module.exports = Pig;

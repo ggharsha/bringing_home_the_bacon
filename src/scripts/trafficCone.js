@@ -1,19 +1,16 @@
-const MovingObject = require("./movingObject");
-const Util = require("./util");
+import MovingObject from "./movingObject";
 
-function TrafficCone(object) {
-    this.pos = [1000, 250];
-    this.vel = [-25, 0];
-    this.game = object["game"];
-    this.size = object["size"]; // refactor this
+export default class TrafficCone extends MovingObject {
+
+    constructor(object) {
+        super(object);
+        this.vel = [-25, 0];
+    }
+
+    draw(ctx) {
+        const trafficcone = new Image();
+        trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, this.pos[0], this.pos[1]));
+        trafficcone.src = "src/images/trafficcone.png";
+    }
+
 }
-
-Util.inherits(TrafficCone, MovingObject);
-
-TrafficCone.prototype.draw = function(ctx) {
-    const trafficcone = new Image();
-    trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, this.pos[0], this.pos[1]));
-    trafficcone.src = "src/images/trafficcone.png";
-}
-
-module.exports = TrafficCone;
