@@ -37,19 +37,17 @@ export default class Pig extends MovingObject {
 
     // working on this
     jump() {
-        console.log("1");
         if (this.pos[1] === 250) {
-            this.vel = [0, -40]
+            console.log("hi")
+            this.vel = [0, -20];
         } 
-        // set max height
-        // set base vel
     }
 
-    isJumping() {
-        if (this.pos[1] !== 250) return true;
-        return false;
-    }
+    // isJumping() {
+    //     if (this.pos[1] !== 250) return true;
+    //     return false;
+    // }
 
-    isDucking() {
+    isDucking(res) {
     }
 }

@@ -33,9 +33,17 @@ export default class Game {
         const pig = this.pig
         pig.switchSprite();
         window.addEventListener("keydown", function(e) {
-            if (e.code === "Space") pig.jump()
+            if (e.code === "Space" || e.code === "ArrowUp") pig.jump()
         });
+        // window.addEventListener("keydown", function(e) {
+        //     if (e.code === "ArrowDown") pig.isDucking(true);
+        // });
+        // window.addEventListener("keyup", function(e) {
+        //     if (e.code === "ArrowDown") pig.isDucking(false);
+        // });
         this.objects.forEach(obj => obj.move());
+        if (this.pig.pos[1] < 80) this.pig.vel = [0, 20];
+        if (this.pig.pos[1] === 250) this.pig.vel = [0, 0];
     }
 
     checkCollisions() {
