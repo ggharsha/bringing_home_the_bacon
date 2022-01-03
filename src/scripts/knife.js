@@ -10,6 +10,6 @@ export default class Knife extends MovingObject {
     draw(ctx) {
         const knife = new Image();
         knife.addEventListener('load', () => ctx.drawImage(knife, this.pos[0], this.pos[1]));
-        knife.src = "src/images/knife.png";
+        knife.src = "src/images/newKnife.png";
     }
 }

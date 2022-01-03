@@ -10,6 +10,6 @@ export default class TrafficCone extends MovingObject {
     draw(ctx) {
         const trafficcone = new Image();
         trafficcone.addEventListener('load', () => ctx.drawImage(trafficcone, this.pos[0], this.pos[1]));
-        trafficcone.src = "src/images/trafficcone.png";
+        trafficcone.src = "src/images/newTrafficCone.png";
     }
 }

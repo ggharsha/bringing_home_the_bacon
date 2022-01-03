@@ -5,9 +5,9 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 // // start game
-// ctx.fillStyle = 'black';
-// ctx.font = '50px Shizuru';
-// ctx.fillText('Press any key to start!', 185, 250);
+ctx.fillStyle = 'black';
+ctx.font = '50px Shizuru';
+ctx.fillText('Press any key to start!', 185, 250);
 
 // // stage - level
 // ctx.fillStyle = 'black';
@@ -17,10 +17,10 @@ const ctx = canvas.getContext('2d');
 import Game from "./scripts/game";
 window.Game = Game;
 const newGame = new Game(ctx);
-// newGame.levelOne();
-// newGame.startAnimating(10);
+newGame.levelOne();
+newGame.startAnimating(10);
 
 
-const newPig = new Image() 
-newPig.addEventListener('load', () => ctx.drawImage(newPig, 0, 0, 192, 128, 40, 300, 192, 128))
-newPig.src = "src/images/pigSprites.png"
+// const newPig = new Image() 
+// newPig.addEventListener('load', () => ctx.drawImage(newPig, 0, 129, 192, 128, 40, 300, 192, 128))
+// newPig.src = "src/images/pigSprites.png"

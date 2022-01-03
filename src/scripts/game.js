@@ -70,10 +70,10 @@ export default class Game {
         this.objects.forEach(obj => { 
             obj.move();
         });
-        if (this.pig.pos[1] < 80) this.pig.vel = [0, 40];
-        if (this.pig.pos[1] >= 250) {
+        if (this.pig.pos[1] < 120) this.pig.vel = [0, 40];
+        if (this.pig.pos[1] >= 320) {
             this.pig.vel = [0, 0];
-            this.pig.pos = [0, 250];
+            this.pig.pos = [40, 320];
         };
     }
     

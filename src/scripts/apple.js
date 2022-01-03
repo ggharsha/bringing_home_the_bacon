@@ -9,6 +9,6 @@ export default class Apple extends MovingObject {
     draw(ctx) {
         const apple = new Image();
         apple.addEventListener('load', () => ctx.drawImage(apple, this.pos[0], this.pos[1]));
-        apple.src = "src/images/apple.png";
+        apple.src = "src/images/newApple.png";
     }
 }
