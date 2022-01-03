@@ -1,14 +1,14 @@
 import MovingObject from "./movingObject";
 
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+// const canvas = document.getElementById('canvas');
+// const ctx = canvas.getContext('2d');
 
 export default class Pig extends MovingObject {
     constructor(object) {
         super(object);
         this.pos = [0, 250];
         this.vel = [0, 0];
-        this.size = [256, 256];
+        this.size = [256, 256]; // remove default sizes, pass in from ctx
         this.sprite = "src/images/pig1.png";
         this.counter = 3;
         // this.pigImg = new Image();

@@ -101,16 +101,17 @@ export default class Game {
     gameOver() {
     }
 
-    levelOne() {
-        let bg = new Background({ game: this, pos: [0, 0]} );
-        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+    // add in default sizing in passed in object here
+    levelOne() { 
+        let bg = new Background({ game: this, pos: [0, 0]});
+        let bg2 = new Background({ game: this, pos: [1000, 0] });
         let tc = new TrafficCone({ game: this, pos: [1100, 250] });
         let tc2 = new TrafficCone({ game: this, pos: [2400, 250] });
         let knife = new Knife({ game: this, pos: [3000, 180] });
         let knife2 = new Knife({ game: this, pos: [4000, 180] });
         let pan = new Pan({ game: this, pos: [3500, 150], vel: [-200, -40] });
         let apple = new Apple({ game: this, pos: [3500, 300] });
-        this.objects.push(bg, bg2, tc, tc2, knife, knife2, pan, apple); // add bg, bg2, 
+        this.objects.push(bg, bg2, tc, tc2, knife, knife2, pan, apple); 
     }
 
     levelTwo() {
