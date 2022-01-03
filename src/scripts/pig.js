@@ -1,5 +1,8 @@
 import MovingObject from "./movingObject";
 
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
 export default class Pig extends MovingObject {
     constructor(object) {
         super(object);
@@ -8,12 +11,16 @@ export default class Pig extends MovingObject {
         this.size = [164, 124];
         this.sprite = "src/images/pig1.png";
         this.counter = 3;
+        // this.pigImg = new Image();
+        // this.pigImg.addEventListener('load', () => ctx.drawImage(pigImg, this.pos[0], this.pos[1]));
+        // this.pigImg.src = this.sprite;
     }
 
     draw(ctx) {
         const pig = new Image();
         pig.addEventListener('load', () => ctx.drawImage(pig, this.pos[0], this.pos[1]));
         pig.src = this.sprite;
+        // ctx.drawImage(this.pigImg, this.pos[0], this.pos[1])
     }
     
     switchSprite() {
@@ -41,14 +48,14 @@ export default class Pig extends MovingObject {
         console.log("hello")
         if (this.pos[1] === 250) {
             this.sprite = "./src/images/duckingpig.png";
-            this.size = [/* new size */];
+            this.size = [164, 100];
         };
     }
 
     stand() {
         if (this.pos[1] === 250) {
             this.sprite = "./src/images/pig1.png";
-            this.size = [/* new size */];
+            this.size = [164, 124];
         };
     }
 

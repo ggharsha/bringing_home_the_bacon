@@ -1,7 +1,6 @@
 import MovingObject from "./movingObject";
 
 export default class Background extends MovingObject {
-
     constructor(object) {
         super(object);
         this.vel = [-50, 0];

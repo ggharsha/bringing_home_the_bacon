@@ -71,6 +71,12 @@ export default class Game {
         // this.checkCollisions();
     }
 
+    restartLevel() {
+    }
+
+    gameOver() {
+    }
+
     levelOne() {
         let bg = new Background({ game: this, pos: [0, 0]} );
         let bg2 = new Background({ game: this, pos: [1000, 0]} );
