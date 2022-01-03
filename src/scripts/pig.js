@@ -39,12 +39,15 @@ export default class Pig extends MovingObject {
         let obsY = otherObject.pos[1];
         let pigLength = this.size[0] / 2;
         let pigHeight = this.size[1] / 2;
+        let pigCornerDist = Math.sqrt((pigX - pigLength)**2 + (pigY - pigHeight)**2);
+        console.log(pigCornerDist);
         let obsLength = otherObject.size[0] / 2;
         let obsHeight = otherObject.size[1] / 2;
-        //check collision, return t or f
-        // dist formula [x1, y1] vs [x2, y2]
-        // square root of (x1 - x2)^2 + (y1 - y2)^2
-        // check if combined distance to corners is less than ^
+        let obsCornerDist = Math.sqrt((obsX - obsLength)**2 + (obsY - obsHeight)**2);
+        console.log(obsCornerDist);
+        let distBetween = Math.sqrt((pigX - obsX)**2 + (pigY - obsY)**2);
+        if (distBetween < pigCornerDist + obsCornerDist) return true;
+        else return false;
     }
 
     jump() {

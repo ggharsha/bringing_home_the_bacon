@@ -78,11 +78,19 @@ export default class Game {
     }
 
     checkCollisions() {
+        const obstacles = this.objects.select(obj => {
+            !obj instanceof Pig && !obj instanceof Apple && !obj instanceof Background
+        });
+        let flag = false;
+        obstacles.forEach(obs => {
+            if (this.pig.isCollidedWith(obs)) flag = true;
+        });
+        return flag;
     }
 
     step() {
         this.moveObjects();
-        // this.checkCollisions();
+        this.checkCollisions();
     }
 
     restartLevel() {
