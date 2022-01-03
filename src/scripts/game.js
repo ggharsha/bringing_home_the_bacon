@@ -16,6 +16,9 @@ export default class Game {
         this.pig = new Pig({ game: this });
         this.objects = [this.pig];
         this.ctx = ctx;
+        ctx.fillStyle = 'black';
+        ctx.font = '40px Shizuru';
+        ctx.fillText(`Lv.${this.level}`, 930, 40);
     }
 
     startAnimating(fps) {
@@ -31,17 +34,25 @@ export default class Game {
         elapsed = now - then;
         if (elapsed > fpsInterval) {
             then = now - (elapsed % fpsInterval);
-            this.draw(this.ctx)
-            this.moveObjects() // replace with step
+            this.draw(this.ctx);
+            this.moveObjects(); // replace with step
         };
     }
 
     draw(ctx) {
+        // trying cache method 
+        // const tempCanvas = document.createElement('canvas');
+        // const tempCtx = tempCanvas.getContext('2d');
+        // tempCanvas.width = 1000;
+        // tempCanvas.height = 600;
+        // tempCanvas.drawImage()
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => {
             obj.draw(ctx);
-            
         }); 
+        ctx.fillStyle = 'black';
+        ctx.font = '40px Shizuru';
+        ctx.fillText(`Lv.${this.level}`, 930, 40);
     }
 
     moveObjects() {
@@ -60,7 +71,10 @@ export default class Game {
             obj.move();
         });
         if (this.pig.pos[1] < 80) this.pig.vel = [0, 40];
-        if (this.pig.pos[1] === 250) this.pig.vel = [0, 0];
+        if (this.pig.pos[1] >= 250) {
+            this.pig.vel = [0, 0];
+            this.pig.pos = [0, 250];
+        };
     }
 
     checkCollisions() {

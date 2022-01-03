@@ -33,15 +33,22 @@ export default class Pig extends MovingObject {
     
     // need to finish
     isCollidedWith(otherObject) {
-        let thisX = this.pos[0];
-        let thisY = this.pos[1];
-        let otherX = otherObject.pos[0];
-        let otherY = otherObject.pos[1];
+        let pigX = this.pos[0];
+        let pigY = this.pos[1];
+        let obsX = otherObject.pos[0];
+        let obsY = otherObject.pos[1];
+        let pigLength = this.size[0] / 2;
+        let pigHeight = this.size[1] / 2;
+        let obsLength = otherObject.size[0] / 2;
+        let obsHeight = otherObject.size[1] / 2;
         //check collision, return t or f
+        // dist formula [x1, y1] vs [x2, y2]
+        // square root of (x1 - x2)^2 + (y1 - y2)^2
+        // check if combined distance to corners is less than ^
     }
 
     jump() {
-        if (this.pos[1] === 250) this.vel = [0, -40];
+        if (this.pos[1] === 250) this.vel = [0, -30];
     }
 
     duck() {
