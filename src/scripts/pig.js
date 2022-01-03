@@ -41,23 +41,12 @@ export default class Pig extends MovingObject {
         let otherRight = otherObject.pos[0] + otherObject.size[0];
         let otherTop = otherObject.pos[1];
         let otherBottom = otherObject.pos[1] + otherObject.size[1];
-        let collision = false;
-        // if ...
-        // let pigLength = this.size[0] / 2;
-        // let pigHeight = this.size[1] / 2;
-        // let pigX = this.pos[0] + 2 * pigLength;
-        // let pigY = this.pos[1] + 2 * pigHeight;
-        // let pigCornerDist = Math.sqrt((pigX - pigLength)**2 + (pigY - pigHeight)**2);
-        // console.log(pigCornerDist);
-        // let obsLength = otherObject.size[0] / 2;
-        // let obsHeight = otherObject.size[1] / 2;
-        // let obsX = otherObject.pos[0] + 2 * obsLength;
-        // let obsY = otherObject.pos[1] + 2 * obsHeight;
-        // let obsCornerDist = Math.sqrt((obsX - obsLength)**2 + (obsY - obsHeight)**2);
-        // console.log(obsCornerDist);
-        // let distBetween = Math.sqrt((pigX - obsX)**2 + (pigY - obsY)**2);
-        // if (distBetween < pigCornerDist + obsCornerDist) return true;
-        // else return false;
+        let collision = true;
+        if ((pigBottom < otherTop) || (pigTop > otherBottom) || (pigRight < otherLeft) || (pigLeft > otherRight)) {
+            collision = false;
+        };
+        console.log(collision);
+        return collision;
     }
 
     jump() {

@@ -83,14 +83,15 @@ export default class Game {
     }
 
     checkCollisions() {
-        const obstacles = this.objects.filter(obj => {
-            obj instanceof Pan || obj instanceof TrafficCone || obj instanceof Knife;
+        const obstacles = [];
+        this.objects.forEach(obj => {
+            if (obj instanceof Pan || obj instanceof Knife || obj instanceof TrafficCone) obstacles.push(obj);
         });
         let flag = false;
         obstacles.forEach(obs => {
             if (this.pig.isCollidedWith(obs)) flag = true;
         });
-        console.log(flag);
+        console.log(flag)
         return flag;
     }
 
