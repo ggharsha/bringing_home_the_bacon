@@ -4,6 +4,7 @@ export default class TrafficCone extends MovingObject {
     constructor(object) {
         super(object);
         this.vel = [-50, 0];
+        this.size = [80, 124]
     }
 
     draw(ctx) {

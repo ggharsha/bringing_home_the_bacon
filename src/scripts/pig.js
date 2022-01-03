@@ -8,7 +8,7 @@ export default class Pig extends MovingObject {
         super(object);
         this.pos = [0, 250];
         this.vel = [0, 0];
-        this.size = [164, 124];
+        this.size = [256, 256];
         this.sprite = "src/images/pig1.png";
         this.counter = 3;
         // this.pigImg = new Image();
@@ -33,21 +33,31 @@ export default class Pig extends MovingObject {
     
     // need to finish
     isCollidedWith(otherObject) {
-        let pigX = this.pos[0];
-        let pigY = this.pos[1];
-        let obsX = otherObject.pos[0];
-        let obsY = otherObject.pos[1];
-        let pigLength = this.size[0] / 2;
-        let pigHeight = this.size[1] / 2;
-        let pigCornerDist = Math.sqrt((pigX - pigLength)**2 + (pigY - pigHeight)**2);
-        console.log(pigCornerDist);
-        let obsLength = otherObject.size[0] / 2;
-        let obsHeight = otherObject.size[1] / 2;
-        let obsCornerDist = Math.sqrt((obsX - obsLength)**2 + (obsY - obsHeight)**2);
-        console.log(obsCornerDist);
-        let distBetween = Math.sqrt((pigX - obsX)**2 + (pigY - obsY)**2);
-        if (distBetween < pigCornerDist + obsCornerDist) return true;
-        else return false;
+        let pigLeft = this.pos[0];
+        let pigRight = this.pos[0] + this.size[0];
+        let pigTop = this.pos[1];
+        let pigBottom = this.pos[1] + this.size[1];
+        let otherLeft = otherObject.pos[0];
+        let otherRight = otherObject.pos[0] + otherObject.size[0];
+        let otherTop = otherObject.pos[1];
+        let otherBottom = otherObject.pos[1] + otherObject.size[1];
+        let collision = false;
+        // if ...
+        // let pigLength = this.size[0] / 2;
+        // let pigHeight = this.size[1] / 2;
+        // let pigX = this.pos[0] + 2 * pigLength;
+        // let pigY = this.pos[1] + 2 * pigHeight;
+        // let pigCornerDist = Math.sqrt((pigX - pigLength)**2 + (pigY - pigHeight)**2);
+        // console.log(pigCornerDist);
+        // let obsLength = otherObject.size[0] / 2;
+        // let obsHeight = otherObject.size[1] / 2;
+        // let obsX = otherObject.pos[0] + 2 * obsLength;
+        // let obsY = otherObject.pos[1] + 2 * obsHeight;
+        // let obsCornerDist = Math.sqrt((obsX - obsLength)**2 + (obsY - obsHeight)**2);
+        // console.log(obsCornerDist);
+        // let distBetween = Math.sqrt((pigX - obsX)**2 + (pigY - obsY)**2);
+        // if (distBetween < pigCornerDist + obsCornerDist) return true;
+        // else return false;
     }
 
     jump() {
@@ -55,7 +65,6 @@ export default class Pig extends MovingObject {
     }
 
     duck() {
-        console.log("hello")
         if (this.pos[1] === 250) {
             this.sprite = "./src/images/duckingpig.png";
             this.size = [164, 100];

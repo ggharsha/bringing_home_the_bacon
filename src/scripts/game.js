@@ -35,7 +35,7 @@ export default class Game {
         if (elapsed > fpsInterval) {
             then = now - (elapsed % fpsInterval);
             this.draw(this.ctx);
-            this.moveObjects(); // replace with step
+            this.step();
         };
     }
 
@@ -76,21 +76,22 @@ export default class Game {
             this.pig.pos = [0, 250];
         };
     }
+    
+    step() {
+        this.moveObjects();
+        this.checkCollisions();
+    }
 
     checkCollisions() {
-        const obstacles = this.objects.select(obj => {
-            !obj instanceof Pig && !obj instanceof Apple && !obj instanceof Background
+        const obstacles = this.objects.filter(obj => {
+            obj instanceof Pan || obj instanceof TrafficCone || obj instanceof Knife;
         });
         let flag = false;
         obstacles.forEach(obs => {
             if (this.pig.isCollidedWith(obs)) flag = true;
         });
+        console.log(flag);
         return flag;
-    }
-
-    step() {
-        this.moveObjects();
-        this.checkCollisions();
     }
 
     restartLevel() {
