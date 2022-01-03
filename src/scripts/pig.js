@@ -31,7 +31,6 @@ export default class Pig extends MovingObject {
         } else this.counter--;
     }
     
-    // need to finish
     isCollidedWith(otherObject) {
         let pigLeft = this.pos[0];
         let pigRight = this.pos[0] + this.size[0];
