@@ -52,6 +52,7 @@ export default class Game {
         ctx.font = '40px Shizuru';
         ctx.fillText(`Lives:${this.lives}`, 870, 40)
         ctx.fillText(`Lv.${this.level}`, 910, 85);
+        if (this.lives === 0) this.gameOverScreen();
     }
 
     moveObjects() {
@@ -105,6 +106,7 @@ export default class Game {
     }
 
     restartLevel() {
+        this.pig = new Pig({ game: this });
         this.objects = [this.pig];
         if (this.level === 1) {
             this.redFlash();
@@ -138,7 +140,7 @@ export default class Game {
     gameOverScreen() {
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
-        this.ctx.fillText('Game over!', 350, 270);
+        this.ctx.fillText('Game over!', 380, 270);
     }
 
     levelOne() { 
