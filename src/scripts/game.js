@@ -113,6 +113,10 @@ export default class Game {
         else if (this.level === 5) this.levelFive();
     }
 
+    redFlash() {
+        // add a red flash for hit detection
+    }
+
     gameOver() {
         this.objects = [this.pig];
         this.pig.sprite = "src/images/newDeadPig.png";
@@ -133,7 +137,7 @@ export default class Game {
     }
 
     levelTwo() {
-        let knife = new Knife({ game: this, pos: [2000, 260] });
+        let knife = new Knife({ game: this, pos: [2000, 280] });
         this.objects.push(knife);
         // let bg = new Background({ game: this, pos: [0, 0]} );
         // let bg2 = new Background({ game: this, pos: [1000, 0]} );

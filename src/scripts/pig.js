@@ -33,8 +33,10 @@ export default class Pig extends MovingObject {
     isCollidedWith(otherObject) {
         let pigLeft = this.pos[0];
         let pigRight = this.pos[0] + this.size[0];
-        let pigTop = this.pos[1];
         let pigBottom = this.pos[1] + this.size[1];
+        let pigTop;
+        if (this.ducking) pigTop = this.pos[1] + 30;
+        else pigTop = this.pos[1];
         let otherLeft = otherObject.pos[0];
         let otherRight = otherObject.pos[0] + otherObject.size[0];
         let otherTop = otherObject.pos[1];
@@ -59,9 +61,7 @@ export default class Pig extends MovingObject {
     }
 
     stand() {
-        console.log('test1')
         if (this.pos[1] === 320) {
-            console.log('test2')
             this.sprite = "src/images/newPig1.png"
             this.switchSprite();
             this.size = [184, 128];
