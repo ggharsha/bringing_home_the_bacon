@@ -1,8 +1,5 @@
 import MovingObject from "./movingObject";
 
-// const canvas = document.getElementById('canvas');
-// const ctx = canvas.getContext('2d');
-
 export default class Pig extends MovingObject {
     constructor(object) {
         super(object);
@@ -11,7 +8,7 @@ export default class Pig extends MovingObject {
         this.size = [184, 128]; 
         this.sprite = "src/images/newPig1.png";
         this.counter = 3;
-        console.log("new pig")
+        this.ducking = false;
     }
 
     draw(ctx) {
@@ -21,12 +18,18 @@ export default class Pig extends MovingObject {
     }
     
     switchSprite() {
-        console.log(this.sprite)
-        if (this.counter === 0 && this.sprite !== "src/images/newDuckingPig.png") {
-            if (this.sprite === "src/images/newPig1.png") this.sprite = "src/images/newPig2.png";
-            else if (this.sprite === "src/images/newPig2.png") this.sprite = "src/images/newPig1.png";
+        console.log(this.ducking)
+        console.log(this.counter)
+        if (this.counter === 0 && !this.ducking) {
+            if (this.sprite === "src/images/newPig1.png") {
+                this.sprite = "src/images/newPig2.png";
+            } else if (this.sprite === "src/images/newPig2.png") {
+                this.sprite = "src/images/newPig1.png";
+            };
             this.counter = 3;
-        } else this.counter--;
+        } else if (this.counter !== 0 && !this.ducking) {
+            this.counter--;
+        };
     }
     
     isCollidedWith(otherObject) {
@@ -53,13 +56,18 @@ export default class Pig extends MovingObject {
         if (this.pos[1] === 320) {
             this.sprite = "src/images/newDuckingPig.png"
             this.size = [184, 98];
+            this.ducking = true;
         };
     }
 
     stand() {
+        console.log('test1')
         if (this.pos[1] === 320) {
+            console.log('test2')
             this.sprite = "src/images/newPig1.png"
+            this.switchSprite();
             this.size = [184, 128];
+            this.ducking = false;
         };
     }
 

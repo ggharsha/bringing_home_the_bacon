@@ -92,14 +92,27 @@ export default class Game {
         obstacles.forEach(obs => {
             if (this.pig.isCollidedWith(obs)) flag = true;
         });
-        return flag;
+        if (flag && this.lives > 1) {
+            this.lives--;
+            this.restartLevel();
+        } else if (flag) {
+            this.lives--;
+            this.gameOver();
+        };
     }
 
     restartLevel() {
-        
+        this.objects = [this.pig];
+        if (this.level === 1) this.levelOne();
+        else if (this.level === 2) this.levelTwo();
+        else if (this.level === 3) this.levelThree();
+        else if (this.level === 4) this.levelFour();
+        else if (this.level === 5) this.levelFive();
     }
 
     gameOver() {
+        this.objects = [this.pig];
+        this.pig.sprite = "src/images/newDeadPig.png";
     }
 
     levelOne() { 
