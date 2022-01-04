@@ -57,14 +57,15 @@ export default class Game {
 
     moveObjects() {
         const pig = this.pig
+        let game = this;
         window.addEventListener("keydown", function(e) {
-            if (e.code === "Space" || e.code === "ArrowUp") pig.jump()
+            if ((e.code === "Space" || e.code === "ArrowUp") && game.lives > 0) pig.jump()
         });
         window.addEventListener("keydown", function(e) {
-            if (e.code === "ArrowDown") pig.duck();
+            if (e.code === "ArrowDown" && game.lives > 0) pig.duck();
         });
         window.addEventListener("keyup", function(e) {
-            if (e.code === "ArrowDown") pig.stand();
+            if (e.code === "ArrowDown" && game.lives > 0) pig.stand();
         });
         pig.switchSprite();
         this.objects.forEach(obj => { 

@@ -7,7 +7,7 @@ export default class Pig extends MovingObject {
         this.vel = [0, 0];
         this.size = [184, 128]; 
         this.sprite = "src/images/newPig1.png";
-        this.counter = 3;
+        this.counter = 2;
         this.ducking = false;
     }
 
@@ -24,7 +24,7 @@ export default class Pig extends MovingObject {
             } else if (this.sprite === "src/images/newPig2.png") {
                 this.sprite = "src/images/newPig1.png";
             };
-            this.counter = 3;
+            this.counter = 2;
         } else if (this.counter !== 0 && !this.ducking) {
             this.counter--;
         };
