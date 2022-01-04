@@ -160,10 +160,16 @@ export default class Game {
     levelTwo() {
         let bg = new Background({ game: this, pos: [0, 0]} );
         let bg2 = new Background({ game: this, pos: [1000, 0]} );
-        let knife = new Knife({ game: this, pos: [2000, 280] });
-        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] })
-        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] })
-        this.objects.push(bg, bg2, knife, pan, pan2);
+        let knife = new Knife({ game: this, pos: [1950, 280] });
+        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
+        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
+        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        let knife2 = new Knife({ game: this, pos: [4600, 280] });
+        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let apple = new Apple({ game: this, pos: [3500, 350] });
+        let goal = new Goal({ game: this, pos: [3500, 0] });
+        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, apple, goal);
     }
 
     levelThree() {
