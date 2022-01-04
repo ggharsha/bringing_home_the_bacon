@@ -52,12 +52,12 @@ export default class Game {
         }); 
         ctx.fillStyle = 'black';
         ctx.font = '40px Shizuru';
-        ctx.fillText(`Lv.${this.level}`, 930, 40);
+        ctx.fillText(`Lives:${this.lives}`, 870, 40)
+        ctx.fillText(`Lv.${this.level}`, 925, 85);
     }
 
     moveObjects() {
         const pig = this.pig
-        pig.switchSprite();
         window.addEventListener("keydown", function(e) {
             if (e.code === "Space" || e.code === "ArrowUp") pig.jump()
         });
@@ -67,6 +67,7 @@ export default class Game {
         window.addEventListener("keyup", function(e) {
             if (e.code === "ArrowDown") pig.stand();
         });
+        pig.switchSprite();
         this.objects.forEach(obj => { 
             obj.move();
         });
@@ -91,27 +92,25 @@ export default class Game {
         obstacles.forEach(obs => {
             if (this.pig.isCollidedWith(obs)) flag = true;
         });
-        console.log(flag)
         return flag;
     }
 
     restartLevel() {
+        
     }
 
     gameOver() {
     }
 
-    // add in default sizing in passed in object here
     levelOne() { 
         let bg = new Background({ game: this, pos: [0, 0]});
         let bg2 = new Background({ game: this, pos: [1000, 0] });
-        let tc = new TrafficCone({ game: this, pos: [1100, 250] });
-        let tc2 = new TrafficCone({ game: this, pos: [2400, 250] });
-        let knife = new Knife({ game: this, pos: [3000, 180] });
-        let knife2 = new Knife({ game: this, pos: [4000, 180] });
-        let pan = new Pan({ game: this, pos: [3500, 150], vel: [-200, -40] });
-        let apple = new Apple({ game: this, pos: [3500, 300] });
-        this.objects.push(bg, bg2, tc, tc2, knife, knife2, pan, apple); 
+        let tc = new TrafficCone({ game: this, pos: [1100, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [3000, 350] });
+        let knife = new Knife({ game: this, pos: [3000, 240] });
+        let pan = new Pan({ game: this, pos: [3000, 0], vel: [-70, 10] });
+        let apple = new Apple({ game: this, pos: [3500, 350] });
+        this.objects.push(bg, bg2, tc, tc2, knife, pan, apple); 
     }
 
     levelTwo() {

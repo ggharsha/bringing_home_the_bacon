@@ -4,7 +4,7 @@ export default class Knife extends MovingObject {
     constructor(object) {
         super(object);
         this.vel = [-100, 0];
-        this.size = [100, 70];
+        this.size = [160, 40];
     }
 
     draw(ctx) {

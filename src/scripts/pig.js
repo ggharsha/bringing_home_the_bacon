@@ -8,9 +8,10 @@ export default class Pig extends MovingObject {
         super(object);
         this.pos = [40, 320];
         this.vel = [0, 0];
-        this.size = [192, 128]; 
+        this.size = [184, 128]; 
         this.sprite = "src/images/newPig1.png";
         this.counter = 3;
+        console.log("new pig")
     }
 
     draw(ctx) {
@@ -20,9 +21,10 @@ export default class Pig extends MovingObject {
     }
     
     switchSprite() {
-        if (this.counter === 0) {
+        console.log(this.sprite)
+        if (this.counter === 0 && this.sprite !== "src/images/newDuckingPig.png") {
             if (this.sprite === "src/images/newPig1.png") this.sprite = "src/images/newPig2.png";
-            else this.sprite = "src/images/newPig1.png";
+            else if (this.sprite === "src/images/newPig2.png") this.sprite = "src/images/newPig1.png";
             this.counter = 3;
         } else this.counter--;
     }
@@ -40,25 +42,24 @@ export default class Pig extends MovingObject {
         if ((pigBottom < otherTop) || (pigTop > otherBottom) || (pigRight < otherLeft) || (pigLeft > otherRight)) {
             collision = false;
         };
-        console.log(collision);
         return collision;
     }
 
     jump() {
-        if (this.pos[1] === 320) this.vel = [0, -30];
+        if (this.pos[1] === 320) this.vel = [0, -25];
     }
 
     duck() {
         if (this.pos[1] === 320) {
             this.sprite = "src/images/newDuckingPig.png"
-            this.size = [192, 98];
+            this.size = [184, 98];
         };
     }
 
     stand() {
         if (this.pos[1] === 320) {
             this.sprite = "src/images/newPig1.png"
-            this.size = [192, 128];
+            this.size = [184, 128];
         };
     }
 

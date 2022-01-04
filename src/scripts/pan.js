@@ -3,8 +3,7 @@ import MovingObject from "./movingObject";
 export default class Pan extends MovingObject {
     constructor(object) {
         super(object);
-        this.vel = [-100, 0];
-        this.size = [100, 70];
+        this.size = [160, 88];
     }
 
     draw(ctx) {
