@@ -18,8 +18,6 @@ export default class Pig extends MovingObject {
     }
     
     switchSprite() {
-        console.log(this.ducking)
-        console.log(this.counter)
         if (this.counter === 0 && !this.ducking) {
             if (this.sprite === "src/images/newPig1.png") {
                 this.sprite = "src/images/newPig2.png";
@@ -70,6 +68,4 @@ export default class Pig extends MovingObject {
             this.ducking = false;
         };
     }
-
-    // add a dead function
 }
