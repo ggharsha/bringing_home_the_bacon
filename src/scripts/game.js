@@ -138,9 +138,9 @@ export default class Game {
 
     levelTwo() {
         let knife = new Knife({ game: this, pos: [2000, 280] });
-        this.objects.push(knife);
-        // let bg = new Background({ game: this, pos: [0, 0]} );
-        // let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let bg = new Background({ game: this, pos: [0, 0]} );
+        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        this.objects.push(knife, bg, bg2);
     }
 
     levelThree() {
