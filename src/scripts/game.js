@@ -6,7 +6,7 @@ import Background from "./background";
 import Apple from "./apple";
 import Goal from "./goal";
 
-let fpsInterval, then, startTime, now, elapsed;
+let fpsInterval, then, now, elapsed;
 
 export default class Game {
     constructor(ctx) {
@@ -23,7 +23,6 @@ export default class Game {
     startAnimating(fps) {
         fpsInterval = 1000 / fps;
         then = Date.now();
-        startTime = then;
         this.animate();
     }
 
@@ -117,7 +116,7 @@ export default class Game {
     gameOver() {
         this.objects = [this.pig];
         this.pig.sprite = "src/images/newDeadPig.png";
-        this.gameOverScreen();
+        // this.gameOverScreen();
     }
 
     levelOne() { 
@@ -184,10 +183,5 @@ export default class Game {
     }
 
     winMessage() {
-
-    }
-
-    gameOverScreen() {
-
     }
 }
