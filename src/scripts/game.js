@@ -54,6 +54,7 @@ export default class Game {
         ctx.fillText(`Lives:${this.lives}`, 870, 40)
         ctx.fillText(`Lv.${this.level}`, 910, 85);
         if (this.lives === 0) this.gameOverScreen();
+        if (this.level === '!') this.winMessage();
     }
 
     moveObjects() {
@@ -104,7 +105,10 @@ export default class Game {
     }
 
     checkGoal() {
-        if (this.goal && this.pig.pos[0] >= this.goal.pos[0]) this.nextLevel();
+        if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
+            // check if you can remove the apple
+            this.nextLevel();
+        };
     }
 
     restartLevel() {
@@ -149,6 +153,7 @@ export default class Game {
             this.levelOne();
             this.pig.sprite = "src/images/newPig1.png";
             this.lives = 3;
+            this.level = 1;
             this.startAnimating(10);
         })
     }
@@ -163,7 +168,7 @@ export default class Game {
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
         this.goal = goal;
-        this.objects.push(bg, bg2, tc, tc2, knife, pan, apple, goal); 
+        this.objects.push(bg, bg2, tc, tc2, knife, pan, goal, apple); 
     }
 
     levelTwo() {
@@ -178,22 +183,56 @@ export default class Game {
         let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
-        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, apple, goal);
+        this.goal = goal;
+        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
     }
 
     levelThree() {
-        // let bg = new Background({ game: this, pos: [0, 0]} );
-        // let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let bg = new Background({ game: this, pos: [0, 0]} );
+        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let knife = new Knife({ game: this, pos: [1950, 280] });
+        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
+        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
+        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        let knife2 = new Knife({ game: this, pos: [4600, 280] });
+        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let apple = new Apple({ game: this, pos: [3500, 350] });
+        let goal = new Goal({ game: this, pos: [3500, 0] });
+        this.goal = goal;
+        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
     }
 
     levelFour() {
-        // let bg = new Background({ game: this, pos: [0, 0]} );
-        // let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let bg = new Background({ game: this, pos: [0, 0]} );
+        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let knife = new Knife({ game: this, pos: [1950, 280] });
+        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
+        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
+        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        let knife2 = new Knife({ game: this, pos: [4600, 280] });
+        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let apple = new Apple({ game: this, pos: [3500, 350] });
+        let goal = new Goal({ game: this, pos: [3500, 0] });
+        this.goal = goal;
+        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
     }
 
     levelFive() {
-        // let bg = new Background({ game: this, pos: [0, 0]} );
-        // let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let bg = new Background({ game: this, pos: [0, 0]} );
+        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let knife = new Knife({ game: this, pos: [1950, 280] });
+        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
+        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
+        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        let knife2 = new Knife({ game: this, pos: [4600, 280] });
+        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let apple = new Apple({ game: this, pos: [3500, 350] });
+        let goal = new Goal({ game: this, pos: [3500, 0] });
+        this.goal = goal;
+        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
     }
 
     nextLevel() {
@@ -218,6 +257,7 @@ export default class Game {
             this.goal = null;
             this.levelFive();
         } else if (this.level === 5) {
+            this.level = `!`
             this.objects = [this.pig];
             this.goal = null;
             this.winMessage();
@@ -225,5 +265,8 @@ export default class Game {
     }
 
     winMessage() {
+        this.ctx.fillStyle = 'black';
+        this.ctx.font = '50px Shizuru';
+        this.ctx.fillText('You brought home the bacon!', 120, 270);
     }
 }
