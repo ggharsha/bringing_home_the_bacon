@@ -46,7 +46,7 @@ export default class Game {
         // tempCanvas.height = 600;
         // tempCanvas.drawImage()
         ctx.clearRect(0, 0, 1000, 600);
-        this.objects.forEach(obj => { // consider refactor here
+        this.objects.forEach(obj => {
             obj.draw(ctx);
         }); 
         ctx.fillStyle = 'black';
@@ -105,8 +105,8 @@ export default class Game {
     }
 
     checkGoal() {
+        // if (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0]) this.objects = this.objects.slice(0, this.objects.length - 1);
         if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
-            // check if you can remove the apple
             this.nextLevel();
         };
     }
@@ -173,39 +173,33 @@ export default class Game {
 
     levelTwo() {
         let bg = new Background({ game: this, pos: [0, 0]} );
-        let bg2 = new Background({ game: this, pos: [1000, 0]} );
-        let knife = new Knife({ game: this, pos: [1950, 280] });
-        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
-        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
-        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
-        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
-        let knife2 = new Knife({ game: this, pos: [4600, 280] });
-        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let bg2 = new Background({ game: this, pos: [1000, 0] });
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
         this.goal = goal;
-        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
+        this.objects.push(bg, bg2, goal, apple);
     }
 
     levelThree() {
-        let bg = new Background({ game: this, pos: [0, 0]} );
-        let bg2 = new Background({ game: this, pos: [1000, 0]} );
-        let knife = new Knife({ game: this, pos: [1950, 280] });
-        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
-        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
-        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
-        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
-        let knife2 = new Knife({ game: this, pos: [4600, 280] });
-        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let bg = new Background({ game: this, pos: [0, 0] });
+        let bg2 = new Background({ game: this, pos: [1000, 0] });
+        let knife = new Knife({ game: this, pos: [1100, 350] });
+        let knife2 = new Knife({ game: this, pos: [1100, 40] });
+        let knife3 = new Knife({ game: this, pos: [2500, 350] });
+        let knife4 = new Knife({ game: this, pos: [2500, 40] });
+        let pan = new Pan({ game: this, pos: [1800, 100], vel: [-100, 0] });
+        let tc = new TrafficCone({ game: this, pos: [2200, 350] });
+        let pan2 = new Pan({ game: this, pos: [4000, 200], vel: [-95, 5] });
+        let knife5 = new Knife({ game: this, pos: [5500, 260] });
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
         this.goal = goal;
-        this.objects.push(bg, bg2, knife, pan, pan2, tc, tc2, knife2, tc3, goal, apple);
+        this.objects.push(bg, bg2, knife, knife2, knife3, knife4, pan, tc, pan2, knife5, goal, apple);
     }
 
     levelFour() {
         let bg = new Background({ game: this, pos: [0, 0]} );
-        let bg2 = new Background({ game: this, pos: [1000, 0]} );
+        let bg2 = new Background({ game: this, pos: [1000, 0] });
         let knife = new Knife({ game: this, pos: [1950, 280] });
         let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
         let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
@@ -221,14 +215,14 @@ export default class Game {
 
     levelFive() {
         let bg = new Background({ game: this, pos: [0, 0]} );
-        let bg2 = new Background({ game: this, pos: [1000, 0]} );
-        let knife = new Knife({ game: this, pos: [1950, 280] });
-        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
-        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
-        let tc = new TrafficCone({ game: this, pos: [1000, 350] });
-        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
-        let knife2 = new Knife({ game: this, pos: [4600, 280] });
-        let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
+        let bg2 = new Background({ game: this, pos: [1000, 0] });
+        // let knife = new Knife({ game: this, pos: [1950, 280] });
+        // let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
+        // let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] });
+        // let tc = new TrafficCone({ game: this, pos: [1000, 350] });
+        // let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        // let knife2 = new Knife({ game: this, pos: [4600, 280] });
+        // let tc3 = new TrafficCone({ game: this, pos: [2900, 350] });
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
         this.goal = goal;
