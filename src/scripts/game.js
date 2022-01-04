@@ -106,21 +106,39 @@ export default class Game {
 
     restartLevel() {
         this.objects = [this.pig];
-        if (this.level === 1) this.levelOne();
-        else if (this.level === 2) this.levelTwo();
-        else if (this.level === 3) this.levelThree();
-        else if (this.level === 4) this.levelFour();
-        else if (this.level === 5) this.levelFive();
-    }
-
+        if (this.level === 1) {
+            this.redFlash();
+            this.levelOne();
+        } else if (this.level === 2) {
+            this.redFlash();
+            this.levelTwo();
+        } else if (this.level === 3) {
+            this.redFlash();
+            this.levelThree();
+        } else if (this.level === 4) {
+            this.redFlash();
+            this.levelFour();
+        } else if (this.level === 5) {
+            this.redFlash();
+            this.levelFive();
+        }
+    }    
+    
     redFlash() {
-        // add a red flash for hit detection
+        this.ctx.fillStyle = '#ff6c57';
+        this.ctx.fillRect(0, 0, 1000, 600);
     }
 
     gameOver() {
         this.objects = [this.pig];
         this.pig.sprite = "src/images/newDeadPig.png";
-        // this.gameOverScreen();
+        this.gameOverScreen();
+    }
+
+    gameOverScreen() {
+        this.ctx.fillStyle = 'black';
+        this.ctx.font = '50px Shizuru';
+        this.ctx.fillText('Game over!', 350, 270);
     }
 
     levelOne() { 
@@ -137,10 +155,12 @@ export default class Game {
     }
 
     levelTwo() {
-        let knife = new Knife({ game: this, pos: [2000, 280] });
         let bg = new Background({ game: this, pos: [0, 0]} );
         let bg2 = new Background({ game: this, pos: [1000, 0]} );
-        this.objects.push(knife, bg, bg2);
+        let knife = new Knife({ game: this, pos: [2000, 280] });
+        let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] })
+        let pan2 = new Pan({ game: this, pos: [1000, 600], vel: [-100, -60] })
+        this.objects.push(bg, bg2, knife, pan, pan2);
     }
 
     levelThree() {
