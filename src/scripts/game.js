@@ -7,6 +7,7 @@ import Apple from "./apple";
 import Goal from "./goal";
 
 let fpsInterval, then, now, elapsed;
+const canvas = document.getElementById('canvas');
 
 export default class Game {
     constructor(ctx) {
@@ -142,6 +143,14 @@ export default class Game {
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('Game over!', 380, 270);
+        this.ctx.font = '24px Shizuru';
+        this.ctx.fillText('Play again?', 450, 400);
+        canvas.addEventListener('click', () => {
+            this.levelOne();
+            this.pig.sprite = "src/images/newPig1.png";
+            this.lives = 3;
+            this.startAnimating(10);
+        })
     }
 
     levelOne() { 

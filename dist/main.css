@@ -81,13 +81,18 @@ body {
 }
 
 #nav-bar {
-    justify-content: space-between;
+    justify-content: center;
     background-color: #a9a9a9;
     padding: 10px;
 }
 
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
 #nav-bar li {
-    display: inline;
+    justify-content: space-between;
     font-size: 32px;
     text-align: center;
     padding-right: 20px;
@@ -111,6 +116,8 @@ body {
 .instructions {
     display: none;
 }
+
+
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
