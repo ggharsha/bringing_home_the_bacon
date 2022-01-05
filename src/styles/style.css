@@ -78,7 +78,7 @@ button {
 }
 
 #modal-content {
-    background-color: lightpink;
+    background-color: rgba(255,255,255,0.8);
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -101,5 +101,12 @@ button {
 }
 
 p {
-    font-size: 28px;
+    font-size: 22px;
+    font-family: monospace;
+}
+
+img {
+    position: relative;
+    width: 6%;
+    margin: 10px;
 }
