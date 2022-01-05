@@ -66,6 +66,7 @@ export default class Game {
         pig.switchSprite();
         this.objects.forEach(obj => { 
             obj.move();
+            if (obj instanceof Background) obj.wrap();
         });
         if (this.pig.pos[1] < 120) this.pig.vel = [0, 40];
         if (this.pig.pos[1] >= 320) {

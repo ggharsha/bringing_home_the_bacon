@@ -6,23 +6,16 @@ export default class Background extends MovingObject {
         this.vel = [-50, 0];
     }
 
-    // we will refactor this
     draw(ctx) {
-        // create road
         ctx.fillStyle = '#838383';
-        ctx.fillRect(0, 400, 1000, 140)
-
-        // create lines on road
+        ctx.fillRect(this.pos[0], 400, 1000, 140)
         ctx.fillStyle = 'yellow';
-        for (let counter = 0; counter < 11; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
-
-        // Background image if I can get it to work
-        // const bg = new Image();
-        // bg.addEventListener('load', () => ctx.drawImage(bg, 0, 0));
-        // bg.src = 'src/images/background.png'
+        for (let counter = 0; counter < 11; counter++) {
+            ctx.fillRect((100 * counter + this.pos[0]), 460, 50, 10);
+        };
     }
 
     wrap() {
-        if (this.pos[0] === 0) this.pos[0] = 1000;
+        if (this.pos[0] === -1000) this.pos[0] = 1000;
     }
 }
