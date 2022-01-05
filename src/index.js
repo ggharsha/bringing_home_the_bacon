@@ -13,6 +13,10 @@ window.onclick = function (event) {
     }
 }
 
+window.addEventListener("keydown", (e) => {
+    if (e.code === "ArrowUp" || e.code === "ArrowDown" || e.code === "Space") e.preventDefault();
+});
+
 import GameView from "./scripts/gameView";
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
