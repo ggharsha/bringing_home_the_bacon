@@ -107,9 +107,9 @@ export default class Game {
         });
         if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
             apple.sprite = "src/images/newApple2.png";
-        } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] / 2 >= this.goal.pos[0])) {
+        } else if (this.goal && (this.pig.pos[0] + (this.pig.size[0] / 2) >= this.goal.pos[0])) {
             apple.sprite = "src/images/newApple3.png";
-        } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] / 5 >= this.goal.pos[0])) {
+        } else if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
             apple.sprite = undefined;
         };
     }
