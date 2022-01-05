@@ -79,6 +79,7 @@ export default class Game {
         this.moveObjects();
         this.checkCollisions();
         this.checkGoal();
+        this.checkApple();
     }
 
     checkCollisions() { // check for collision with pan/knife/cone -> call restartLevel or gameOver
@@ -96,6 +97,20 @@ export default class Game {
         } else if (flag) {
             this.lives--;
             this.gameOver();
+        };
+    }
+
+    checkApple() {
+        let apple;
+        this.objects.forEach(obj => {
+            if (obj instanceof Apple) apple = obj;
+        });
+        if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
+            apple.sprite = "src/images/newApple2.png";
+        } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] / 2 >= this.goal.pos[0])) {
+            apple.sprite = "src/images/newApple3.png";
+        } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] / 5 >= this.goal.pos[0])) {
+            apple.sprite = undefined;
         };
     }
 
@@ -271,11 +286,18 @@ export default class Game {
         };
     }
 
-    winMessage() { // win screen
+    winMessage() { // win screen -> play again?
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('You brought home the bacon!', 120, 270);
         this.ctx.font = '24px Shizuru';
         this.ctx.fillText('Play again?', 450, 400);
+        canvas.addEventListener('click', () => {
+            this.levelOne();
+            this.pig.sprite = "src/images/newPig1.png";
+            this.lives = 3;
+            this.level = 1;
+            this.startAnimating(10);
+        });
     }
 }
