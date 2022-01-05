@@ -21,13 +21,13 @@ export default class Game {
         this.goal = null;
     }
 
-    startAnimating(fps) {
+    startAnimating(fps) { // determine fps for game
         fpsInterval = 1000 / fps;
         then = Date.now();
         this.animate();
     }
 
-    animate(){
+    animate(){ // animation loop
         requestAnimationFrame(this.animate.bind(this))
         now = Date.now();
         elapsed = now - then;
@@ -38,7 +38,7 @@ export default class Game {
         };
     }
 
-    draw(ctx) {
+    draw(ctx) { // clear canvas -> draw all objects -> check for gameOver or win
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => {
             obj.draw(ctx);
@@ -51,7 +51,7 @@ export default class Game {
         if (this.level === '!') this.winMessage();
     }
 
-    moveObjects() {
+    moveObjects() { // check for movement -> move objects -> wrap background -> handle gravity for pig jump 
         const pig = this.pig
         let game = this;
         window.addEventListener("keydown", function(e) {
@@ -75,13 +75,13 @@ export default class Game {
         };
     }
     
-    step() {
+    step() { // move -> check for collision -> check if win
         this.moveObjects();
         this.checkCollisions();
         this.checkGoal();
     }
 
-    checkCollisions() {
+    checkCollisions() { // check for collision with pan/knife/cone -> call restartLevel or gameOver
         const obstacles = [];
         this.objects.forEach(obj => {
             if (obj instanceof Pan || obj instanceof Knife || obj instanceof TrafficCone) obstacles.push(obj);
@@ -99,13 +99,13 @@ export default class Game {
         };
     }
 
-    checkGoal() {
+    checkGoal() { // check if player reaches goal
         if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
             this.nextLevel();
         };
     }
 
-    restartLevel() {
+    restartLevel() { // check current level and reload objects and pig
         this.pig = new Pig({ game: this });
         this.objects = [this.pig];
         if (this.level === 1) {
@@ -126,18 +126,18 @@ export default class Game {
         }
     }    
     
-    redFlash() {
+    redFlash() { // flash red on screen when colliding with obj
         this.ctx.fillStyle = '#ff6c57';
         this.ctx.fillRect(0, 0, 1000, 600);
     }
 
-    gameOver() {
+    gameOver() { // replace sprite with dead pig, remove other objects
         this.objects = [this.pig];
         this.pig.sprite = "src/images/newDeadPig.png";
         this.gameOverScreen();
     }
 
-    gameOverScreen() {
+    gameOverScreen() { // gameOver screen -> reset values for new game and add play again feature
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('Game over!', 380, 270);
@@ -152,7 +152,7 @@ export default class Game {
         });
     }
 
-    levelOne() { 
+    levelOne() {  // level 1 objects
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
         let tc = new TrafficCone({ game: this, pos: [1100, 350] });
@@ -165,7 +165,7 @@ export default class Game {
         this.objects.push(bg, bg2, tc, tc2, knife, pan, goal, apple); 
     }
 
-    levelTwo() {
+    levelTwo() { // level 2 objects
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
         let knife = new Knife({ game: this, pos: [1000, 300] });
@@ -183,7 +183,7 @@ export default class Game {
         this.objects.push(bg, bg2, knife, knife2, pan, tc, knife3, knife4, knife5, knife6, knife7, goal, apple);
     }
 
-    levelThree() {
+    levelThree() { // level 3 objects
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
         let pan = new Pan({ game: this, pos: [850, 600], vel: [-100, -50] });
@@ -200,7 +200,7 @@ export default class Game {
         this.objects.push(bg, bg2, pan, pan2, tc, knife, tc2, knife2, tc3, pan3, goal, apple);
     }
 
-    levelFour() {
+    levelFour() { // level 4 objects
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
         let knife = new Knife({ game: this, pos: [1100, 350] });
@@ -217,7 +217,7 @@ export default class Game {
         this.objects.push(bg, bg2, knife, knife2, knife3, knife4, pan, tc, pan2, knife5, goal, apple);
     }
 
-    levelFive() {
+    levelFive() { // level 5 objects
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
         let knife = new Knife({ game: this, pos: [2800, 280] });
@@ -242,7 +242,7 @@ export default class Game {
         this.objects.push(bg, bg2, knife, pan, tc, tc2, knife2, knife3, knife4, knife5, knife6, knife7, tc3, tc4, pan2, pan3, pan4, pan5, goal, apple);
     }
 
-    nextLevel() {
+    nextLevel() { // level progression 
         if (this.level === 1) {
             this.level++;
             this.objects = [this.pig];
@@ -271,7 +271,7 @@ export default class Game {
         };
     }
 
-    winMessage() {
+    winMessage() { // win screen
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('You brought home the bacon!', 120, 270);

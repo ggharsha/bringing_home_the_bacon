@@ -8,6 +8,6 @@ export default class GameView {
 
     start() {
         this.game.levelOne();
-        this.game.startAnimating(10);
+        this.game.startAnimating(10)
     }
 }
