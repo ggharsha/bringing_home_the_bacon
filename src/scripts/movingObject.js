@@ -6,7 +6,7 @@ export default class MovingObject {
         this.size = object["size"];
     }
 
-    draw(ctx){}
+    draw(ctx) {}
 
     move() {
         this.pos[0] = this.pos[0] + this.vel[0];

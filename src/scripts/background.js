@@ -15,6 +15,11 @@ export default class Background extends MovingObject {
         // create lines on road
         ctx.fillStyle = 'yellow';
         for (let counter = 0; counter < 11; counter++) ctx.fillRect((100 * counter), 460, 50, 10);
+
+        // Background image if I can get it to work
+        // const bg = new Image();
+        // bg.addEventListener('load', () => ctx.drawImage(bg, 0, 0));
+        // bg.src = 'src/images/background.png'
     }
 
     wrap() {

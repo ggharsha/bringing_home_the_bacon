@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
     // ctx.fillStyle = 'black';
     // ctx.font = '50px Shizuru';
     // ctx.fillText('Click the window to start!', 150, 270)
+    
 const clickToStart = new Image();
 clickToStart.addEventListener('load', () => ctx.drawImage(clickToStart, 150, 230));
 clickToStart.src = "src/images/clickToStart.png";
