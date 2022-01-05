@@ -275,5 +275,7 @@ export default class Game {
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('You brought home the bacon!', 120, 270);
+        this.ctx.font = '24px Shizuru';
+        this.ctx.fillText('Play again?', 450, 400);
     }
 }
