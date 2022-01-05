@@ -1,4 +1,4 @@
-const modal = document.getElementById("instruction-list");
+const modal = document.getElementById("modal");
 const button = document.getElementById("button");
 const span = document.getElementsByClassName("close")[0];
 button.onclick = function () {

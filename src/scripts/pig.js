@@ -49,7 +49,7 @@ export default class Pig extends MovingObject {
     }
 
     jump() {
-        if (this.pos[1] === 320) this.vel = [0, -25];
+        if (this.pos[1] === 320) this.vel = [0, -35];
     }
 
     duck() {

@@ -68,7 +68,7 @@ export default class Game {
             obj.move();
             if (obj instanceof Background) obj.wrap();
         });
-        if (this.pig.pos[1] < 120) this.pig.vel = [0, 40];
+        if (this.pig.pos[1] < 120) this.pig.vel = [0, 35];
         if (this.pig.pos[1] >= 320) {
             this.pig.vel = [0, 0];
             this.pig.pos = [40, 320];
@@ -220,10 +220,10 @@ export default class Game {
     levelFive() {
         let bg = new Background({ game: this, pos: [0, 0] });
         let bg2 = new Background({ game: this, pos: [1000, 0] });
-        let knife = new Knife({ game: this, pos: [1950, 280] });
+        let knife = new Knife({ game: this, pos: [2800, 280] });
         let pan = new Pan({ game: this, pos: [1000, 0], vel: [-100, 60] });
         let tc = new TrafficCone({ game: this, pos: [1000, 350] });
-        let tc2 = new TrafficCone({ game: this, pos: [1800, 350] });
+        let tc2 = new TrafficCone({ game: this, pos: [1900, 350] });
         let knife2 = new Knife({ game: this, pos: [4600, 280] });
         let knife3 = new Knife({ game: this, pos: [5600, 350] });
         let knife4 = new Knife({ game: this, pos: [5600, 400] });

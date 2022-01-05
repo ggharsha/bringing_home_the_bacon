@@ -63,11 +63,11 @@ button {
     border-radius: 5%;
 }
 
-.instruction-list {
+#modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 100px;
+    z-index: 40;
+    padding-top: 500px;
     left: 0;
     top: 0;
     width: 100%;
@@ -77,12 +77,13 @@ button {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
-    background-color: grey;
+#modal-content {
+    background-color: lightpink;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
+    border-radius: 15px;
 }
 
 .close {
@@ -100,5 +101,5 @@ button {
 }
 
 p {
-    font-size: 18px;
+    font-size: 28px;
 }
