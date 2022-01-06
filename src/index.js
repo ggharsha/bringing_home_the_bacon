@@ -10,7 +10,7 @@ span.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
+    };
 }
 
 window.addEventListener("keydown", (e) => {
@@ -20,9 +20,6 @@ window.addEventListener("keydown", (e) => {
 import GameView from "./scripts/gameView";
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-    // ctx.fillStyle = 'black';
-    // ctx.font = '50px Shizuru';
-    // ctx.fillText('Click the window to start!', 150, 270)
 
 document.addEventListener('DOMContentLoaded', () => {
     const clickToStart = new Image();
@@ -41,4 +38,4 @@ canvas.addEventListener('click', () => {
         games.push(newGame);
         newGame.start();
     };
-});
+})

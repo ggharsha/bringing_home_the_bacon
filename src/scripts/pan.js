@@ -4,6 +4,7 @@ export default class Pan extends MovingObject {
     constructor(object) {
         super(object);
         this.size = [160, 88];
+
     }
 
     draw(ctx) {
