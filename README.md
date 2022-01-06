@@ -1,25 +1,24 @@
 # Bringing Home the Bacon
 
 ## Background:
-Bringing Home the Bacon is a sidescroller game borne of my love for the genre when growing up with series such as Mario and Sonic the Hedgehog. In this game, a player will take control of the pig as it tries to escape the angry butcher, all while avoiding obstacles along the way. The game consists of levels that should be progressively more and more challenging and will introduce more and more obstacles along the way.
+Bringing Home the Bacon is a sidescroller game borne of my love for the genre when growing up with series such as Mario and Sonic the Hedgehog. In this game, the player will take control of the pig as it tries to escape the angry butcher, all while avoiding obstacles along the way. The game consists of levels that should be progressively more and more challenging and will introduce more and more obstacles along the way.
 
 In order to best proceed, the game will require pattern recognition and good reaction time from the player. The rules are simple:
 
 1) The player has 3 lives to get as far as they can within the game
-2) If the pig is hit by an obstacle, the butcher will catch him and the player will lose a life
+2) If the pig is hit by an obstacle, the player loses a life
 3) If the player loses all their lives before completing the game, the butcher wins!
 4) If the player clears all the current levels, they successfully brought home the bacon!
 
 ## Functionality and MVPs:
 In Bringing Home the Bacon, users will be able to:
-* Start, pause, and resume the game
+* Start the game
 * Control the pig using keys <W/D>, <Up/Down>, or <Space/Down>
 * Progress through levels by reaching the end of each stage
 * Restart the game upon losing all lives or finishing the game
 
 In addition, this project will include:
-* Instructions on how to control the pig and pause the game
-* Toggle on/off for music and game sounds (unsure whether I'll implement sound)
+* Instructions on how to control the pig
 * A production README
 
 ## Wireframes:
@@ -41,7 +40,7 @@ This project will be implemented with the following technologies:
 ## Implementation Timeline:
 * 12/31 Thursday
     * Implement basic structure with classes for the game
-    * Get canvas to display on page along with pig and butcher elements
+    * Get canvas to display on page along with pig
 
 * 1/3 Monday
     * Flesh out classes and finalize all obstacles and characters
@@ -51,10 +50,10 @@ This project will be implemented with the following technologies:
     * Finish implementing logic for collision detection, movement, and screen-scrolling
 
 * 1/5 Wednesday
-    * Add character sprites and animations
+    * Finish HTML and CSS to polish project including a navbar
 
 * 1/6 Thursday
-    * Finish HTML and CSS to polish project including navbar
+    * Catch bugs and fix animation stuttering
 
 ## Bonus Features:
 This project has abundant potential in terms of add-on features. Some ideas include:
