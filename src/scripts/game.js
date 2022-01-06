@@ -162,7 +162,7 @@ export default class Game {
         this.ctx.fillText('Play again?', 450, 400);
         canvas.addEventListener('click', () => {
             if (this.games.length === 0) {
-                this.games.push("check")
+                this.games.push("check");
                 this.levelOne();
                 this.pig.sprite = "src/images/newPig1.png";
                 this.lives = 3;
@@ -300,6 +300,7 @@ export default class Game {
         this.ctx.fillText('Play again?', 450, 400);
         canvas.addEventListener('click', () => {
             if (this.games.length === 0) {
+                this.games.push("check");
                 this.levelOne();
                 this.pig.sprite = "src/images/newPig1.png";
                 this.lives = 3;
