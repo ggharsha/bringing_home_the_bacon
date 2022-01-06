@@ -28,7 +28,7 @@ export default class Game {
         this.animate();
     }
 
-    animate(){ // animation loop
+    animate() { // animation loop
         requestAnimationFrame(this.animate.bind(this))
         now = Date.now();
         elapsed = now - then;
@@ -42,8 +42,10 @@ export default class Game {
     draw(ctx) { // clear canvas -> draw all objects -> check for gameOver or win
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => {
-            obj.draw(ctx);
-        }); 
+            // obj.draw(ctx);
+            if (!(obj instanceof Pig)) obj.draw(ctx);
+        });
+        this.pig.draw(ctx)
         ctx.fillStyle = 'black';
         ctx.font = '40px Shizuru';
         ctx.fillText(`Lives:${this.lives}`, 870, 40)
@@ -55,17 +57,17 @@ export default class Game {
     moveObjects() { // check for movement -> move objects -> wrap background -> handle gravity for pig jump 
         const pig = this.pig
         let game = this;
-        window.addEventListener("keydown", function(e) {
+        window.addEventListener("keydown", function (e) {
             if ((e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyW") && game.lives > 0) pig.jump()
         });
-        window.addEventListener("keydown", function(e) {
-            if ((e.code === "ArrowDown" || e.code === "KeyS" ) && game.lives > 0) pig.duck();
+        window.addEventListener("keydown", function (e) {
+            if ((e.code === "ArrowDown" || e.code === "KeyS") && game.lives > 0) pig.duck();
         });
-        window.addEventListener("keyup", function(e) {
-            if ((e.code === "ArrowDown" || e.code === "KeyS" ) && game.lives > 0) pig.stand();
+        window.addEventListener("keyup", function (e) {
+            if ((e.code === "ArrowDown" || e.code === "KeyS") && game.lives > 0) pig.stand();
         });
-        pig.switchSprite();
-        this.objects.forEach(obj => { 
+        // pig.switchSprite();
+        this.objects.forEach(obj => {
             obj.move();
             if (obj instanceof Background) obj.wrap();
         });
@@ -75,7 +77,7 @@ export default class Game {
             this.pig.pos = [40, 320];
         };
     }
-    
+
     step() { // move -> check for collision -> check if win
         this.moveObjects();
         this.checkCollisions();
@@ -140,8 +142,8 @@ export default class Game {
             this.redFlash();
             this.levelFive();
         }
-    }    
-    
+    }
+
     redFlash() { // flash red on screen when colliding with obj
         this.ctx.fillStyle = '#ff6c57';
         this.ctx.fillRect(0, 0, 1000, 600);
@@ -149,7 +151,8 @@ export default class Game {
 
     gameOver() { // replace sprite with dead pig, remove other objects
         this.objects = [this.pig];
-        this.pig.sprite = "src/images/newDeadPig.png";
+        this.pig.dead = true;
+        // this.pig.sprite = "src/images/newDeadPig.png";
         this.gameOverScreen();
     }
 
@@ -164,7 +167,7 @@ export default class Game {
             if (this.games.length === 0) {
                 this.games.push("check");
                 this.levelOne();
-                this.pig.sprite = "src/images/newPig1.png";
+                this.pig.dead = false;
                 this.lives = 3;
                 this.level = 1;
                 this.startAnimating(10)
@@ -182,7 +185,7 @@ export default class Game {
         let apple = new Apple({ game: this, pos: [3500, 350] });
         let goal = new Goal({ game: this, pos: [3500, 0] });
         this.goal = goal;
-        this.objects.push(bg, bg2, tc, tc2, knife, pan, goal, apple); 
+        this.objects.push(bg, bg2, tc, tc2, knife, pan, goal, apple);
     }
 
     levelTwo() { // level 2 objects
