@@ -10,7 +10,7 @@ In order to best proceed, the game will require pattern recognition and good rea
 3) If the player loses all their lives before completing the game, the butcher wins!
 4) If the player clears all the current levels, they successfully brought home the bacon!
 
-Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)
+**Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)**
 
 ## Functionality and MVPs:
 In Bringing Home the Bacon, users will be able to:
