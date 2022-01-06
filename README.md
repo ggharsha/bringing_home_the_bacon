@@ -34,8 +34,6 @@ In addition, this project will include:
 * The menu in the middle of the screen will contain a button that leads to instructions, a button that resumes the game, and a button that restarts the game
 * The top right will contain the current level
 
-![screenshot](screenshot.png)
-
 ## Libraries and APIs:
 This project will be implemented with the following technologies:
 * HTML/CSS
