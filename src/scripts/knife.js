@@ -1,15 +1,19 @@
 import MovingObject from "./movingObject";
 
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
 export default class Knife extends MovingObject {
     constructor(object) {
         super(object);
         this.vel = [-100, 0];
         this.size = [160, 40];
+        this.img = new Image();
+        this.img.src = "src/images/newKnife.png";
+        this.img.onload = () => this.draw(ctx);
     }
 
     draw(ctx) {
-        const knife = new Image();
-        knife.addEventListener('load', () => ctx.drawImage(knife, this.pos[0], this.pos[1]));
-        knife.src = "src/images/newKnife.png";
+        ctx.drawImage(this.img, this.pos[0], this.pos[1]);
     }
 }
