@@ -2,7 +2,7 @@
 
 ![demogif](demogif.gif)
 
-###Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)
+## Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)
 
 ## Background:
 Bringing Home the Bacon is a sidescroller game borne of my love for the genre when growing up with series such as Mario and Sonic the Hedgehog. In this game, the player will take control of the pig as it tries to escape the angry butcher, all while avoiding obstacles along the way. The game consists of levels that should be progressively more and more challenging and will introduce more and more obstacles along the way.
