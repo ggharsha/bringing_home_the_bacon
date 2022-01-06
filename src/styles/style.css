@@ -117,3 +117,8 @@ img {
     width: 6%;
     margin: 10px;
 }
+
+.credits {
+    font-size: 12px;
+    float: right;
+}
