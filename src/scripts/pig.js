@@ -1,4 +1,5 @@
 import MovingObject from "./movingObject";
+import TrafficCone from "./trafficCone";
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -72,6 +73,10 @@ export default class Pig extends MovingObject {
         let otherRight = otherObject.pos[0] + otherObject.size[0];
         let otherTop = otherObject.pos[1];
         let otherBottom = otherObject.pos[1] + otherObject.size[1];
+        if (otherObject instanceof TrafficCone) {
+            otherLeft = otherLeft + 10;
+            otherRight = otherRight - 10;
+        };
         let collision = true;
         if ((pigBottom < otherTop) || (pigTop > otherBottom) || (pigRight < otherLeft) || (pigLeft > otherRight)) {
             collision = false;

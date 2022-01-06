@@ -55,6 +55,7 @@ ul {
 
 #nav-bar li:hover {
     background-color: #838383;
+    border-radius: 10px;
 }
 
 #canvas {
@@ -67,7 +68,7 @@ button {
     width: 100px;
     height: 40px;
     font-size: 16px;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 #modal {

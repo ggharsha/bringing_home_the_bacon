@@ -42,7 +42,6 @@ export default class Game {
     draw(ctx) { // clear canvas -> draw all objects -> check for gameOver or win
         ctx.clearRect(0, 0, 1000, 600);
         this.objects.forEach(obj => {
-            // obj.draw(ctx);
             if (!(obj instanceof Pig)) obj.draw(ctx);
         });
         this.pig.draw(ctx)
@@ -66,7 +65,6 @@ export default class Game {
         window.addEventListener("keyup", function (e) {
             if ((e.code === "ArrowDown" || e.code === "KeyS") && game.lives > 0) pig.stand();
         });
-        // pig.switchSprite();
         this.objects.forEach(obj => {
             obj.move();
             if (obj instanceof Background) obj.wrap();
@@ -109,11 +107,11 @@ export default class Game {
             if (obj instanceof Apple) apple = obj;
         });
         if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
-            apple.sprite = undefined;
+            apple.state = null;
         } else if (this.goal && (this.pig.pos[0] + (this.pig.size[0] / 2) >= this.goal.pos[0])) {
-            apple.sprite = "src/images/newApple3.png";
+            apple.state = 3;
         } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
-            apple.sprite = "src/images/newApple2.png";
+            apple.state = 2;
         };
     }
 
@@ -152,7 +150,6 @@ export default class Game {
     gameOver() { // replace sprite with dead pig, remove other objects
         this.objects = [this.pig];
         this.pig.dead = true;
-        // this.pig.sprite = "src/images/newDeadPig.png";
         this.gameOverScreen();
     }
 
