@@ -100,7 +100,7 @@ export default class Game {
         };
     }
 
-    checkApple() {
+    checkApple() { // apple animations for end of level
         let apple;
         this.objects.forEach(obj => {
             if (obj instanceof Apple) apple = obj;
@@ -113,9 +113,6 @@ export default class Game {
             apple.sprite = "src/images/newApple2.png";
         };
     }
-
-    // if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
-            // apple.sprite = "src/images/newApple2.png";
 
     checkGoal() { // check if player reaches goal
         if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
