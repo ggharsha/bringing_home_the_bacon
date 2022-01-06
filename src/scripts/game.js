@@ -19,6 +19,7 @@ export default class Game {
         this.objects = [this.pig];
         this.ctx = ctx;
         this.goal = null;
+        this.games = [];
     }
 
     startAnimating(fps) { // determine fps for game
@@ -153,17 +154,21 @@ export default class Game {
     }
 
     gameOverScreen() { // gameOver screen -> reset values for new game and add play again feature
+        this.games = [];
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('Game over!', 380, 270);
         this.ctx.font = '24px Shizuru';
         this.ctx.fillText('Play again?', 450, 400);
         canvas.addEventListener('click', () => {
-            this.levelOne();
-            this.pig.sprite = "src/images/newPig1.png";
-            this.lives = 3;
-            this.level = 1;
-            this.startAnimating(10);
+            if (this.games.length === 0) {
+                this.games.push("check")
+                this.levelOne();
+                this.pig.sprite = "src/images/newPig1.png";
+                this.lives = 3;
+                this.level = 1;
+                this.startAnimating(10)
+            };
         });
     }
 
@@ -287,17 +292,20 @@ export default class Game {
     }
 
     winMessage() { // win screen -> play again?
+        this.games = [];
         this.ctx.fillStyle = 'black';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('You brought home the bacon!', 120, 270);
         this.ctx.font = '24px Shizuru';
         this.ctx.fillText('Play again?', 450, 400);
         canvas.addEventListener('click', () => {
-            this.levelOne();
-            this.pig.sprite = "src/images/newPig1.png";
-            this.lives = 3;
-            this.level = 1;
-            this.startAnimating(10);
+            if (this.games.length === 0) {
+                this.levelOne();
+                this.pig.sprite = "src/images/newPig1.png";
+                this.lives = 3;
+                this.level = 1;
+                this.startAnimating(10)
+            };
         });
     }
 }
