@@ -10,6 +10,8 @@ In order to best proceed, the game will require pattern recognition and good rea
 3) If the player loses all their lives before completing the game, the butcher wins!
 4) If the player clears all the current levels, they successfully brought home the bacon!
 
+Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)
+
 ## Functionality and MVPs:
 In Bringing Home the Bacon, users will be able to:
 * Start the game
@@ -29,6 +31,8 @@ In addition, this project will include:
 * The pause button will be located in the top left of the page, and when clicked, it will create a clickable menu that appears in the middle of the screen
 * The menu in the middle of the screen will contain a button that leads to instructions, a button that resumes the game, and a button that restarts the game
 * The top right will contain the current level
+
+![screenshot](screenshot.png)
 
 ## Libraries and APIs:
 This project will be implemented with the following technologies:
