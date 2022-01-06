@@ -105,14 +105,17 @@ export default class Game {
         this.objects.forEach(obj => {
             if (obj instanceof Apple) apple = obj;
         });
-        if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
-            apple.sprite = "src/images/newApple2.png";
+        if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
+            apple.sprite = undefined;
         } else if (this.goal && (this.pig.pos[0] + (this.pig.size[0] / 2) >= this.goal.pos[0])) {
             apple.sprite = "src/images/newApple3.png";
-        } else if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
-            apple.sprite = undefined;
+        } else if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
+            apple.sprite = "src/images/newApple2.png";
         };
     }
+
+    // if (this.goal && (this.pig.pos[0] + this.pig.size[0] >= this.goal.pos[0])) {
+            // apple.sprite = "src/images/newApple2.png";
 
     checkGoal() { // check if player reaches goal
         if (this.goal && (this.pig.pos[0] >= this.goal.pos[0])) {
