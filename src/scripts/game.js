@@ -302,7 +302,6 @@ export default class Game {
             if (this.games.length === 0) {
                 this.games.push("check");
                 this.levelOne();
-                this.pig.sprite = "src/images/newPig1.png";
                 this.lives = 3;
                 this.level = 1;
                 this.startAnimating(10)

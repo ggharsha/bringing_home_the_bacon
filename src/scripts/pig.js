@@ -10,26 +10,21 @@ export default class Pig extends MovingObject {
         this.pos = [40, 320];
         this.vel = [0, 0];
         this.size = [184, 128];
-
         this.imgStand1 = new Image();
         this.imgStand1.src = "src/images/newPig1.png";
         this.imgStand1.onload = () => this.draw(ctx);
         this.stand1 = true;
-
         this.imgStand2 = new Image();
         this.imgStand2.src = "src/images/newPig2.png";
         this.imgStand2.onload = () => this.draw(ctx);
         this.stand2 = false;
-
         this.imgDuck = new Image();
         this.imgDuck.src = "src/images/newDuckingPig.png";
         this.imgDuck.onload = () => this.draw(ctx);
         this.duckImg = false;
-
         this.imgDead = new Image();
         this.imgDead.src = "src/images/newDeadPig.png";
         this.imgDead.onload = () => this.draw(ctx);
-
         this.counter = 2;
         this.ducking = false;
         this.dead = false;
