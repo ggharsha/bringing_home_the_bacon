@@ -1,6 +1,7 @@
 # Bringing Home the Bacon
 
 ![demogif](demogif.gif)
+
 **Live [here](https://ggharsha.github.io/bringing_home_the_bacon/)**
 
 ## Background:
