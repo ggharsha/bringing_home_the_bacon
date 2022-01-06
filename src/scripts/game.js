@@ -57,7 +57,7 @@ export default class Game {
         const pig = this.pig
         let game = this;
         window.addEventListener("keydown", function (e) {
-            if ((e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyW") && game.lives > 0) pig.jump()
+            if ((e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyW") && game.lives > 0 && !pig.ducking) pig.jump()
         });
         window.addEventListener("keydown", function (e) {
             if ((e.code === "ArrowDown" || e.code === "KeyS") && game.lives > 0) pig.duck();
