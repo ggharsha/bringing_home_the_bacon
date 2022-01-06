@@ -107,7 +107,7 @@ button {
     cursor: pointer;
 }
 
-p {
+.instructions {
     font-size: 22px;
     font-family: monospace;
 }
@@ -118,7 +118,7 @@ img {
     margin: 10px;
 }
 
-.credits {
-    font-size: 12px;
-    float: right;
+#credits {
+    font-size: 15px;
+    font-family: monospace;
 }
