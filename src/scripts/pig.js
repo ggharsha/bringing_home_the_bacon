@@ -42,10 +42,10 @@ export default class Pig extends MovingObject {
                 ctx.drawImage(this.imgStand1, this.pos[0], this.pos[1]);
             }
             this.counter = 2;
-        } else if (this.ducking) {
-            ctx.drawImage(this.imgDuck, this.pos[0], this.pos[1]);
         } else if (this.dead) {
             ctx.drawImage(this.imgDead, this.pos[0], this.pos[1]);
+        } else if (this.ducking) {
+            ctx.drawImage(this.imgDuck, this.pos[0], this.pos[1]);
         } else if (this.stand1 && this.counter !== 0) {
             ctx.drawImage(this.imgStand1, this.pos[0], this.pos[1]);
             this.counter--;
