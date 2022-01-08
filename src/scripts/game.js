@@ -163,11 +163,11 @@ export default class Game {
         canvas.addEventListener('click', () => {
             if (this.games.length === 0) {
                 this.games.push("check");
-                this.levelOne();
                 this.pig.dead = false;
                 this.pig.ducking = false;
                 this.pig.stand2 = false;
                 this.pig.stand1 = true;
+                this.levelOne();
                 this.lives = 3;
                 this.level = 1;
                 this.startAnimating(10)
@@ -304,12 +304,12 @@ export default class Game {
         canvas.addEventListener('click', () => {
             if (this.games.length === 0) {
                 this.games.push("check");
-                this.levelOne();
-                this.lives = 3;
-                this.level = 1;
                 this.pig.ducking = false;
                 this.pig.stand2 = false;
                 this.pig.stand1 = true;
+                this.lives = 3;
+                this.level = 1;
+                this.levelOne();
                 this.startAnimating(10)
             };
         });
