@@ -29,7 +29,7 @@ export default class Background extends MovingObject {
         //     ctx.fillRect((100 * counter + this.pos[0]), 460, 50, 10);
         // }; 
 
-        // new background
+        // new background image
         ctx.drawImage(this.img, this.pos[0], this.pos[1]);
     }
 
