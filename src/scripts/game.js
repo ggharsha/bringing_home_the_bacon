@@ -45,7 +45,7 @@ export default class Game {
             if (!(obj instanceof Pig)) obj.draw(ctx);
         });
         this.pig.draw(ctx)
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
         ctx.font = '40px Shizuru';
         ctx.fillText(`Lives:${this.lives}`, 870, 40)
         ctx.fillText(`Lv.${this.level}`, 910, 85);
@@ -155,7 +155,7 @@ export default class Game {
 
     gameOverScreen() { // gameOver screen -> reset values for new game and add play again feature
         this.games = [];
-        this.ctx.fillStyle = 'black';
+        this.ctx.fillStyle = 'white';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('Game over!', 380, 270);
         this.ctx.font = '24px Shizuru';
@@ -296,7 +296,7 @@ export default class Game {
 
     winMessage() { // win screen -> play again?
         this.games = [];
-        this.ctx.fillStyle = 'black';
+        this.ctx.fillStyle = 'white';
         this.ctx.font = '50px Shizuru';
         this.ctx.fillText('You brought home the bacon!', 120, 270);
         this.ctx.font = '24px Shizuru';
