@@ -59,8 +59,8 @@ export default class Pig extends MovingObject {
 
     isCollidedWith(otherObject) {
         let pigLeft = this.pos[0];
-        let pigRight = this.pos[0] + this.size[0];
-        let pigBottom = this.pos[1] + this.size[1];
+        let pigRight = this.pos[0] + this.size[0] - 40;
+        let pigBottom = this.pos[1] + this.size[1] - 10;
         let pigTop;
         if (this.ducking) pigTop = this.pos[1] + 30;
         else pigTop = this.pos[1];
